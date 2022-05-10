@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://wish-fountain.netlify.app/`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
