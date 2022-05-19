@@ -1,23 +1,27 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
-const Form = ({ siteTitle }) => (
-  <div>
-    <form>
-      <label for="text">Test</label>
-      <input name="text" type="text"></input>
-      <input type="submit">Submit</input>
-    </form>
-  </div>
-)
+const Form = ({ isVisible, toggleForm }) => {
+  const display = isVisible ? "block" : "none"
 
-Form.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  const closeForm = () => {
+    toggleForm(false)
+  }
 
-Form.defaultProps = {
-  siteTitle: ``,
+  return (
+    <div
+      style={{
+        display: display,
+      }}
+    >
+      <form>
+        <label htmlFor="text">Test</label>
+        <input name="text" type="text" />
+        <button type="submit">Submit</button>
+      </form>
+      <button onClick={closeForm}>Close Form</button>
+    </div>
+  )
 }
 
 export default Form
