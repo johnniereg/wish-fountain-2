@@ -17,8 +17,10 @@
     "gatsby-transformer-sharp": "^4.13.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
+    "react-device-detect": "^2.2.2",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
+    "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.5",
     "react-helmet": "^6.1.0"
