@@ -1,36 +1,21 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-import { useDrop } from "react-dnd"
-import { ItemTypes } from "./ItemTypes.js"
+import { DropTarget } from "react-drag-drop-container"
 
-const Well = ({ name }) => {
-  const [{ canDrop, isOver }, drop] = useDrop(() => ({
-    accept: ItemTypes.COIN,
-    drop: () => ({ name: "Well" }),
-    collect: monitor => ({
-      isOver: monitor.isOver(),
-      canDrop: monitor.canDrop(),
-    }),
-  }))
-
-  const isActive = canDrop && isOver
-  let backgroundColor = "#222"
-  if (isActive) {
-    backgroundColor = "darkgreen"
-  } else if (canDrop) {
-    backgroundColor = "darkkhaki"
-  }
-
+const Well = ({ name, isDragging }) => {
+  const opacity = isDragging ? 0.5 : 1
   return (
-    <div ref={drop} className="wishing-well">
-      <StaticImage
-        alt={"Wishing Well"}
-        height={600}
-        loading={"eager"}
-        src="../images/fountain.png"
-      />
-    </div>
+    <DropTarget targetKey="well">
+      <div style={{ opacity: opacity }}>
+        <StaticImage
+          alt={"Wishing Well"}
+          height={600}
+          loading={"eager"}
+          src="../images/fountain.png"
+        />
+      </div>
+    </DropTarget>
   )
 }
 

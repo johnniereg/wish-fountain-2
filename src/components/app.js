@@ -7,24 +7,41 @@ import Form from "../components/form"
 
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false)
-
-  const toggleForm = value => {
-    setFormVisibility(value)
-  }
+  const [isDragging, setIsDragging] = useState(false)
 
   return (
     <div>
       <h1>The Wishing Well</h1>
 
-      <Well />
+      <Well isDragging={isDragging} />
 
-      <Coin name={"Coin 1"} toggleForm={toggleForm} />
-      <Coin name={"Coin 2"} toggleForm={toggleForm} />
-      <Coin name={"Coin 3"} toggleForm={toggleForm} />
-      <Coin name={"Coin 4"} toggleForm={toggleForm} />
-      <Coin name={"Coin 5"} toggleForm={toggleForm} />
+      <Coin
+        name={"Coin 1"}
+        toggleForm={setFormVisibility}
+        isDragging={setIsDragging}
+      />
+      <Coin
+        name={"Coin 2"}
+        toggleForm={setFormVisibility}
+        isDragging={setIsDragging}
+      />
+      <Coin
+        name={"Coin 3"}
+        toggleForm={setFormVisibility}
+        isDragging={setIsDragging}
+      />
+      <Coin
+        name={"Coin 4"}
+        toggleForm={setFormVisibility}
+        isDragging={setIsDragging}
+      />
+      <Coin
+        name={"Coin 5"}
+        toggleForm={setFormVisibility}
+        isDragging={setIsDragging}
+      />
 
-      <Form toggleForm={toggleForm} isVisible={formVisibility} />
+      <Form toggleForm={setFormVisibility} isVisible={formVisibility} />
     </div>
   )
 }
