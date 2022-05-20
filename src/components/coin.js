@@ -1,37 +1,37 @@
 import * as React from "react"
-import { useDrag } from "react-dnd"
-import { ItemTypes } from "./ItemTypes.js"
+// import { useDrag } from "react-dnd"
+// import { ItemTypes } from "./ItemTypes.js"
+import { DragDropContainer } from "react-drag-drop-container"
 
 import coin from "../images/coin.png"
 
-const Coin = ({ name, toggleForm }) => {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: ItemTypes.COIN,
-    item: { name },
-    end: (item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (item && dropResult) {
-        toggleForm(true)
-      }
-    },
-    collect: monitor => ({
-      isDragging: monitor.isDragging(),
-      handlerId: monitor.getHandlerId(),
-    }),
-  }))
-
-  if (isDragging) {
-    return <div ref={drag} />
+const Coin = ({ name, toggleForm, isDragging }) => {
+  const onDrop = () => {
+    console.log("drop")
+    toggleForm(true)
+  }
+  const onDrag = () => {
+    console.log("dragging")
+    isDragging(true)
+  }
+  const onDragEnd = () => {
+    console.log("drag end")
+    isDragging(false)
   }
   return (
-    <div ref={drag} className="coin">
+    <DragDropContainer
+      onDrop={onDrop}
+      onDrag={onDrag}
+      onDragEnd={onDragEnd}
+      targetKey="well"
+    >
       <img
         alt={"Coin"}
         style={{ cursor: "move", maxHeight: "50px", width: "auto" }}
         src={coin}
         draggable={false}
       ></img>
-    </div>
+    </DragDropContainer>
   )
 }
 
