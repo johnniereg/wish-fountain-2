@@ -29,6 +29,7 @@ const Coin = ({ image, isDragging, name, toggleForm, x, y }) => {
       >
         <img
           alt={name}
+          className="icon"
           style={{ cursor: "move", maxHeight: "75px", width: "auto" }}
           src={image}
           draggable={false}

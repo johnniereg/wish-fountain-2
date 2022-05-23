@@ -3,6 +3,8 @@ import { useState } from "react"
 
 import "../styles/components/info.scss"
 
+import icon from "../images/question-mark.png"
+
 const Info = () => {
   const [panelVisible, setPanelVisible] = useState(false)
 
@@ -17,8 +19,19 @@ const Info = () => {
           onClick={() => {
             toggleVisibility(true)
           }}
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            cursor: "pointer",
+          }}
         >
-          Open Info Panel
+          <img
+            alt="Question Mark icon to open info panel"
+            className="icon"
+            draggable={false}
+            src={icon}
+            style={{ marginBottom: 0, maxHeight: "75px" }}
+          ></img>
         </button>
       </div>
       <div className={`info__wrapper ${panelVisible ? "" : "hidden"}`}>
