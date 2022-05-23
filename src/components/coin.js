@@ -3,35 +3,38 @@ import { DragDropContainer } from "react-drag-drop-container"
 
 import "../styles/components/coin.scss"
 
-import coin from "../images/coin.png"
-
-const Coin = ({ name, toggleForm, isDragging }) => {
+const Coin = ({ image, isDragging, name, toggleForm, x, y }) => {
   const onDrop = () => {
-    console.log("drop")
     toggleForm(true)
   }
   const onDrag = () => {
-    console.log("dragging")
     isDragging(true)
   }
   const onDragEnd = () => {
-    console.log("drag end")
     isDragging(false)
   }
   return (
-    <DragDropContainer
-      onDrop={onDrop}
-      onDrag={onDrag}
-      onDragEnd={onDragEnd}
-      targetKey="well"
+    <div
+      class="coin"
+      style={{
+        left: x,
+        top: y,
+      }}
     >
-      <img
-        alt={"Coin"}
-        style={{ cursor: "move", maxHeight: "50px", width: "auto" }}
-        src={coin}
-        draggable={false}
-      ></img>
-    </DragDropContainer>
+      <DragDropContainer
+        onDrop={onDrop}
+        onDrag={onDrag}
+        onDragEnd={onDragEnd}
+        targetKey="well"
+      >
+        <img
+          alt={name}
+          style={{ cursor: "move", maxHeight: "75px", width: "auto" }}
+          src={image}
+          draggable={false}
+        ></img>
+      </DragDropContainer>
+    </div>
   )
 }
 

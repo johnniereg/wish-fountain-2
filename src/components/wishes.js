@@ -3,8 +3,12 @@ import { useState, useEffect } from "react"
 
 import "../styles/components/wishes.scss"
 
-const Wishes = () => {
+const Wishes = ({ isVisible, toggleVisibility }) => {
   const [wishes, setWishes] = useState([])
+
+  const hide = () => {
+    toggleVisibility(false)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,11 +35,12 @@ const Wishes = () => {
   }, [])
 
   return (
-    <div className="wishes">
+    <div className={`wishes ${isVisible ? "" : "hidden"}`}>
       <div>Wishes</div>
       {wishes.map(wish => {
         return <div key={wish.number}>{wish.title}</div>
       })}
+      <button onClick={hide}>Close</button>
     </div>
   )
 }

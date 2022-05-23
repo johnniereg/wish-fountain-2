@@ -3,7 +3,7 @@ import { navigate } from "gatsby-link"
 
 import "../styles/components/form.scss"
 
-const Form = ({ isVisible, toggleForm }) => {
+const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({})
 
   const display = isVisible ? "block" : "none"
@@ -12,7 +12,7 @@ const Form = ({ isVisible, toggleForm }) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const closeForm = () => {
+  const hide = () => {
     toggleForm(false)
   }
 
@@ -33,7 +33,10 @@ const Form = ({ isVisible, toggleForm }) => {
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => {
+        hide()
+        toggleWish(true)
+      })
       .catch(error => alert(error))
   }
 
@@ -44,6 +47,7 @@ const Form = ({ isVisible, toggleForm }) => {
         display: display,
       }}
     >
+      <button onClick={hide}>Close Form</button>
       <form
         name="wish-form"
         method="post"
@@ -56,7 +60,6 @@ const Form = ({ isVisible, toggleForm }) => {
         <input name="text" type="text" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
-      <button onClick={closeForm}>Close Form</button>
     </div>
   )
 }
