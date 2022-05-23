@@ -1,9 +1,21 @@
 import * as React from "react"
+import { useState } from "react"
+import { navigate } from "gatsby-link"
 
 import "../styles/components/form.scss"
 
 const Form = ({ isVisible, toggleForm }) => {
+  const [state, setState] = useState({})
+
   const display = isVisible ? "block" : "none"
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const closeForm = () => {
+    toggleForm(false)
+  }
 
   const encode = data => {
     return Object.keys(data)
@@ -11,20 +23,18 @@ const Form = ({ isVisible, toggleForm }) => {
       .join("&")
   }
 
-  const closeForm = () => {
-    toggleForm(false)
-  }
-
-  const handleSubmit = event => {
-    event.preventDefault()
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": event.target.getAttribute("name"),
+        "form-name": form.getAttribute("name"),
+        ...state,
       }),
     })
-      .then(() => alert("/thank-you/"))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
 
@@ -35,10 +45,16 @@ const Form = ({ isVisible, toggleForm }) => {
         display: display,
       }}
     >
-      <form onSubmit={handleSubmit}>
+      <form
+        name="wish-form"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
         <input type="hidden" name="wish-form" value="wish" />
         <label htmlFor="text">Test</label>
-        <input name="text" type="text" />
+        <input name="text" type="text" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
       <button onClick={closeForm}>Close Form</button>
