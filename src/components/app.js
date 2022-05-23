@@ -6,6 +6,7 @@ import "../styles/components/app.scss"
 import Well from "../components/well"
 import Coin from "../components/coin"
 import Form from "../components/form"
+import Wishes from "../components/wishes"
 import Info from "../components/info"
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
       <p>Please no sexist, racist, homophobic, hateful language</p>
 
       <Form toggleForm={setFormVisibility} isVisible={formVisibility} />
+      <Wishes />
       <Info />
     </div>
   )
