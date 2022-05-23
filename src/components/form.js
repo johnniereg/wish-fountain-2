@@ -1,5 +1,4 @@
-import * as React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { navigate } from "gatsby-link"
 
 import "../styles/components/form.scss"
