@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import "../styles/components/wishes.scss"
 
 const Wishes = ({ isVisible, toggleVisibility }) => {
-  const [wishes, setWishes] = useState([])
+  const [wish, setWish] = useState({})
 
   const hide = () => {
     toggleVisibility(false)
@@ -25,8 +25,8 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
           }
         )
         const json = await response.json()
-        console.log("json", json)
-        setWishes(json)
+        const wish = json[Math.floor(Math.random() * json.length)] // pick a random wish
+        setWish(wish)
       } catch (error) {
         console.log("Error: ", error)
       }
@@ -36,10 +36,8 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
 
   return (
     <div className={`wishes ${isVisible ? "" : "hidden"}`}>
-      <div>Wishes</div>
-      {wishes.map(wish => {
-        return <div key={wish.number}>{wish.title}</div>
-      })}
+      <div>Someone else made a wish:</div>
+      <div key={wish.number}>{wish.title}</div>
       <button onClick={hide}>Close</button>
     </div>
   )
