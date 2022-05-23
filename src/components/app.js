@@ -1,16 +1,19 @@
 import * as React from "react"
 import { useState } from "react"
 
+import "../styles/components/app.scss"
+
 import Well from "../components/well"
 import Coin from "../components/coin"
 import Form from "../components/form"
+import Info from "../components/info"
 
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
 
   return (
-    <div>
+    <div className="app">
       <h1>The Wishing Well</h1>
 
       <Well isDragging={isDragging} />
@@ -41,7 +44,10 @@ const App = () => {
         isDragging={setIsDragging}
       />
 
+      <p>Please no sexist, racist, homophobic, hateful language</p>
+
       <Form toggleForm={setFormVisibility} isVisible={formVisibility} />
+      <Info />
     </div>
   )
 }

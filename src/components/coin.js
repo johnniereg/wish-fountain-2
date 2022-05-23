@@ -1,7 +1,7 @@
 import * as React from "react"
-// import { useDrag } from "react-dnd"
-// import { ItemTypes } from "./ItemTypes.js"
 import { DragDropContainer } from "react-drag-drop-container"
+
+import "../styles/components/coin.scss"
 
 import coin from "../images/coin.png"
 

@@ -1,5 +1,6 @@
 import * as React from "react"
-import PropTypes from "prop-types"
+
+import "../styles/components/form.scss"
 
 const Form = ({ isVisible, toggleForm }) => {
   const display = isVisible ? "block" : "none"
@@ -10,6 +11,7 @@ const Form = ({ isVisible, toggleForm }) => {
 
   return (
     <div
+      className="form"
       style={{
         display: display,
       }}
