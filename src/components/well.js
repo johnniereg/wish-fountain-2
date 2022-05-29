@@ -2,7 +2,6 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { DropTarget } from "react-drag-drop-container"
-import FountainVideo from "../images/fountain-compressed.mp4"
 import Fountain from "../images/fountain.gif"
 
 const Well = ({ name, isDragging }) => {
