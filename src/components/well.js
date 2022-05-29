@@ -2,18 +2,17 @@ import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { DropTarget } from "react-drag-drop-container"
+import FountainVideo from "../images/fountain-compressed.mp4"
+import Fountain from "../images/fountain.gif"
 
 const Well = ({ name, isDragging }) => {
-  const opacity = isDragging ? 0.5 : 1
   return (
     <DropTarget targetKey="well">
-      <div style={{ opacity: opacity }}>
-        <StaticImage
-          alt={"Wishing Well"}
-          height={600}
-          loading={"eager"}
-          src="../images/fountain.png"
-        />
+      <div>
+        {/* <video controls>
+          <source src={FountainVideo} type="video/mp4" />
+        </video> */}
+        <img src={Fountain} />
       </div>
     </DropTarget>
   )
