@@ -14,7 +14,7 @@ const Info = () => {
 
   return (
     <div className="info">
-      <div className={`info__icon ${panelVisible ? "hidden" : ""}`}>
+      <div className={`info__icon ${panelVisible ? "hidden" : "visible"}`}>
         <button
           onClick={() => {
             toggleVisibility(true)
@@ -34,7 +34,7 @@ const Info = () => {
           ></img>
         </button>
       </div>
-      <div className={`info__wrapper ${panelVisible ? "" : "hidden"}`}>
+      <div className={`info__wrapper ${panelVisible ? "visible" : "hidden"}`}>
         <h1 className="info__title">Info About this Piece</h1>
         <p className="info__description">
           Here is some information about this piece.

@@ -5,12 +5,14 @@ import "../styles/components/disclaimer.scss"
 const Disclaimer = () => {
   return (
     <div className="disclaimer">
-      <p>
-        <em>
-          Please do not use any racist, sexist, homophobic or otherwise hateful
-          language
-        </em>
-      </p>
+      <div className="disclaimer__wrapper">
+        <p className="disclaimer__text">
+          <em>
+            Please do not use any racist, sexist, homophobic or otherwise
+            hateful language
+          </em>
+        </p>
+      </div>
     </div>
   )
 }

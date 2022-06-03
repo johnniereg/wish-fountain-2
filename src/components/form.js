@@ -5,8 +5,6 @@ import "../styles/components/form.scss"
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({})
 
-  const display = isVisible ? "block" : "none"
-
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
@@ -39,13 +37,10 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       .catch(error => alert(error))
   }
 
+  const classes = isVisible ? "form visible" : "form hidden"
+
   return (
-    <div
-      className="form"
-      style={{
-        display: display,
-      }}
-    >
+    <div className={classes}>
       <button onClick={hide}>Close Form</button>
       <form
         name="wish-form"
