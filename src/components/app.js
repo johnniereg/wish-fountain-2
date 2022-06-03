@@ -40,22 +40,22 @@ const App = () => {
     { img: gem4, name: "Gem 4", x: "92%", y: "81%" },
     { img: gem5, name: "Gem 5", x: "88%", y: "71%" },
     { img: gem6, name: "Gem 6", x: "77%", y: "58%" },
-    { img: gem7, name: "Gem 7", x: "55%", y: "86%" },
-    { img: gem8, name: "Gem 8", x: "48%", y: "77%" },
-    { img: gem9, name: "Gem 9", x: "28%", y: "67%" },
+    { img: gem7, name: "Gem 7", x: "78%", y: "86%" },
+    { img: gem8, name: "Gem 8", x: "24%", y: "77%" },
+    { img: gem9, name: "Gem 9", x: "24%", y: "71%" },
     { img: gem10, name: "Gem 10", x: "62%", y: "72%" },
-    { img: gem11, name: "Gem 11", x: "55%", y: "81%" },
+    { img: gem11, name: "Gem 11", x: "77%", y: "81%" },
     { img: gem12, name: "Gem 12", x: "71%", y: "88%" },
     { img: star1, name: "Star 1", x: "11%", y: "81%" },
     { img: star2, name: "Star 2", x: "16%", y: "71%" },
     { img: star3, name: "Star 3", x: "74%", y: "70%" },
     { img: star4, name: "Star 4", x: "88%", y: "52%" },
-    { img: star5, name: "Star 5", x: "35%", y: "80%" },
+    { img: star5, name: "Star 5", x: "20%", y: "80%" },
   ]
 
   return (
     <div className="app">
-      <h1>The Wishing Well</h1>
+      <h1>Wish Fountain</h1>
 
       <Well isDragging={isDragging} />
 
