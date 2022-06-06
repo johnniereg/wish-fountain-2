@@ -3,11 +3,37 @@
   position: absolute;
   right: 25px;
 
-  &__wrapper {
-    background-color: yellow;
-    border: 1px solid black;
-    padding: 25px;
+  &__panel {
+    background-image: url(../../images/pop-up.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 429px;
+    width: 600px;
 
+    &:before,
+    &:after {
+      content: "";
+      min-height: 50px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 45px;
+    right: 45px;
+  }
+
+  &__wrapper {
+    overflow-y: scroll;
+    margin: 30px 30px 0 35px;
+  }
+
+  &__icon {
     &.hidden {
       display: none;
     }
