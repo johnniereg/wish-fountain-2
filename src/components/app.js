@@ -10,6 +10,8 @@ import Wishes from "../components/wishes"
 import Info from "../components/info"
 import Disclaimer from "../components/disclaimer"
 
+import title from "../images/title.gif"
+
 import gem1 from "../images/gem-1.png"
 import gem2 from "../images/gem-2.png"
 import gem3 from "../images/gem-3.png"
@@ -55,7 +57,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Wish Fountain</h1>
+      <img src={title}></img>
 
       <Well isDragging={isDragging} />
 
