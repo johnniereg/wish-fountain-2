@@ -38,8 +38,8 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  /* background-image: url(../images/background.jpg);
-  background-size: cover; */
+  background-image: url(../images/background.jpg);
+  background-size: cover;
   background-color: white;
   color: var(--color-text);
   font-family: sans-serif;
