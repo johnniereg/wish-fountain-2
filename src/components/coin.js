@@ -29,13 +29,13 @@ const Coin = ({ image, isDragging, name, toggleForm, x, y }) => {
 
   const display = isVisible ? "block" : "none"
 
+  const coinClasses = `coin ${name}`
+
   return (
     <div
-      class="coin"
+      class={coinClasses}
       style={{
         display: display,
-        left: x,
-        top: y,
       }}
     >
       <DragDropContainer

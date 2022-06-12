@@ -1,8 +1,94 @@
+.coins {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+}
+
 .coin {
+  margin-bottom: 0;
   position: absolute;
 
   .icon {
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
+  }
+
+  &.Gem-1 {
+    left: 25%;
+    top: 0;
+  }
+
+  &.Gem-2 {
+    left: 20%;
+    top: 3%;
+  }
+
+  &.Gem-3 {
+    left: 22%;
+    top: -25%;
+  }
+
+  &.Gem-4 {
+    left: 29%;
+    top: -7%;
+  }
+
+  &.Gem-5 {
+    right: 25%;
+    top: 0;
+  }
+
+  &.Gem-6 {
+    right: 35%;
+    top: 10%;
+  }
+
+  &.Gem-7 {
+    right: 37%;
+    top: 15%;
+  }
+
+  &.Gem-8 {
+    left: 50%;
+    bottom: 10%;
+  }
+  &.Gem-9 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Gem-10 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Gem-11 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Gem-12 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Star-1 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Star-2 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Star-3 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Star-4 {
+    left: 5%;
+    bottom: 10%;
+  }
+  &.Star-5 {
+    left: 5%;
+    bottom: 10%;
   }
 }

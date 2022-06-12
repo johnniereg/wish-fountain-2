@@ -36,23 +36,23 @@ const App = () => {
   const [isDragging, setIsDragging] = useState(false)
 
   const coins = [
-    { img: gem1, name: "Gem 1", x: "8%", y: "55%" },
-    { img: gem2, name: "Gem 2", x: "12%", y: "62%" },
-    { img: gem3, name: "Gem 3", x: "17%", y: "77%" },
-    { img: gem4, name: "Gem 4", x: "92%", y: "81%" },
-    { img: gem5, name: "Gem 5", x: "88%", y: "71%" },
-    { img: gem6, name: "Gem 6", x: "77%", y: "58%" },
-    { img: gem7, name: "Gem 7", x: "78%", y: "86%" },
-    { img: gem8, name: "Gem 8", x: "24%", y: "77%" },
-    { img: gem9, name: "Gem 9", x: "24%", y: "71%" },
-    { img: gem10, name: "Gem 10", x: "62%", y: "72%" },
-    { img: gem11, name: "Gem 11", x: "77%", y: "81%" },
-    { img: gem12, name: "Gem 12", x: "71%", y: "88%" },
-    { img: star1, name: "Star 1", x: "11%", y: "81%" },
-    { img: star2, name: "Star 2", x: "16%", y: "71%" },
-    { img: star3, name: "Star 3", x: "74%", y: "70%" },
-    { img: star4, name: "Star 4", x: "88%", y: "52%" },
-    { img: star5, name: "Star 5", x: "20%", y: "80%" },
+    { img: gem1, name: "Gem-1", x: "8%", y: "55%" },
+    { img: gem2, name: "Gem-2", x: "12%", y: "62%" },
+    { img: gem3, name: "Gem-3", x: "17%", y: "77%" },
+    { img: gem4, name: "Gem-4", x: "92%", y: "81%" },
+    { img: gem5, name: "Gem-5", x: "88%", y: "71%" },
+    { img: gem6, name: "Gem-6", x: "77%", y: "58%" },
+    { img: gem7, name: "Gem-7", x: "78%", y: "86%" },
+    { img: gem8, name: "Gem-8", x: "24%", y: "77%" },
+    { img: gem9, name: "Gem-9", x: "24%", y: "71%" },
+    { img: gem10, name: "Gem-10", x: "62%", y: "72%" },
+    { img: gem11, name: "Gem-11", x: "77%", y: "81%" },
+    { img: gem12, name: "Gem-12", x: "71%", y: "88%" },
+    { img: star1, name: "Star-1", x: "11%", y: "81%" },
+    { img: star2, name: "Star-2", x: "16%", y: "71%" },
+    { img: star3, name: "Star-3", x: "74%", y: "70%" },
+    { img: star4, name: "Star-4", x: "88%", y: "52%" },
+    { img: star5, name: "Star-5", x: "20%", y: "80%" },
   ]
 
   return (
@@ -61,20 +61,25 @@ const App = () => {
         <img alt="Wish Fountain" className="hero__image" src={title}></img>
       </div>
 
-      <Well isDragging={isDragging} />
+      <div className="well__wrapper">
+        {" "}
+        <Well isDragging={isDragging} />
+      </div>
 
-      {coins.map(coin => {
-        return (
-          <Coin
-            image={coin.img}
-            isDragging={setIsDragging}
-            name={coin.name}
-            toggleForm={setFormVisibility}
-            x={coin.x}
-            y={coin.y}
-          />
-        )
-      })}
+      <div className="coins">
+        {coins.map(coin => {
+          return (
+            <Coin
+              image={coin.img}
+              isDragging={setIsDragging}
+              name={coin.name}
+              toggleForm={setFormVisibility}
+              x={coin.x}
+              y={coin.y}
+            />
+          )
+        })}
+      </div>
 
       <Form
         toggleForm={setFormVisibility}
