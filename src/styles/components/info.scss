@@ -6,6 +6,8 @@
   &__panel {
     background-image: url(../../images/pop-up.png);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     height: 429px;
