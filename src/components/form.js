@@ -41,12 +41,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const classes = isVisible ? "form visible" : "form hidden"
 
   return (
-    <div
-      className={classes}
-      style={{
-        backgroungImage: bg,
-      }}
-    >
+    <div className={classes}>
       <div className="form__wrapper">
         <form
           className="wish-form"
