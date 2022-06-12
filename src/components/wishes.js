@@ -36,9 +36,11 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
 
   return (
     <div className={`wishes ${isVisible ? "" : "hidden"}`}>
-      <div>Someone else made a wish:</div>
-      <div key={wish.number}>{wish.title}</div>
-      <button onClick={hide}>Close</button>
+      <div className="wishes__wrapper">
+        <div>Someone else made a wish:</div>
+        <div key={wish.number}>{wish.title}</div>
+        <button onClick={hide}>Close</button>
+      </div>
     </div>
   )
 }

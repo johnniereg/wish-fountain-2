@@ -1,6 +1,21 @@
 .wishes {
-  background-color: yellow;
-  border: 1px solid black;
-  padding: 25px;
+  background-image: url(../../images/read-wish.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
   position: absolute;
+  height: 90%;
+  width: 90%;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin-top: 25px;
+    position: absolute;
+    width: 100%;
+  }
 }

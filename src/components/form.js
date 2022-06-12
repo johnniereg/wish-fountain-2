@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import "../styles/components/form.scss"
+import bg from "../images/make-wish.png"
 
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({})
@@ -37,28 +38,32 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       .catch(error => alert(error))
   }
 
-  const classes = isVisible ? "form__wrapper visible" : "form__wrapper hidden"
+  const classes = isVisible ? "form visible" : "form hidden"
 
   return (
-    <div className={classes}>
-      <button className="close" onClick={hide}>
-        X
-      </button>
-      <form
-        className="form"
-        name="wish-form"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="wish-form" value="wish" />
-        <label htmlFor="text">Test</label>
-        <input name="textarea" type="text" onChange={handleChange} />
-        <button className="submit" type="submit">
-          Submit
-        </button>
-      </form>
+    <div
+      className={classes}
+      style={{
+        backgroungImage: bg,
+      }}
+    >
+      <div className="form__wrapper">
+        <form
+          className="wish-form"
+          name="wish-form"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="wish-form" value="wish" />
+          <label htmlFor="text">Toss your wish into the fountain</label>
+          <textarea name="textarea" onChange={handleChange} />
+          <button className="submit" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
