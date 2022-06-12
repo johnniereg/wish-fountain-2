@@ -4,7 +4,6 @@ import { useState } from "react"
 import "../styles/components/info.scss"
 
 import icon from "../images/question-mark.png"
-import popup from "../images/pop-up.png"
 
 const Info = () => {
   const [panelVisible, setPanelVisible] = useState(false)

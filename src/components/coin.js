@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useState, setState } from "react"
+import { useState } from "react"
 import { DragDropContainer } from "react-drag-drop-container"
 
 import "../styles/components/coin.scss"
@@ -33,7 +33,7 @@ const Coin = ({ image, isDragging, name, toggleForm, x, y }) => {
 
   return (
     <div
-      class={coinClasses}
+      className={coinClasses}
       style={{
         display: display,
       }}

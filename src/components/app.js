@@ -72,6 +72,7 @@ const App = () => {
             <Coin
               image={coin.img}
               isDragging={setIsDragging}
+              key={coin.name}
               name={coin.name}
               toggleForm={setFormVisibility}
               x={coin.x}

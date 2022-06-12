@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import "../styles/components/form.scss"
-import bg from "../images/make-wish.png"
 
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({})
