@@ -7,14 +7,17 @@ import Fountain from "../images/fountain.gif"
 
 const Well = ({ name, isDragging }) => {
   return (
-    <DropTarget targetKey="well">
-      <div className="well">
-        <img
-          alt="A yellow wishing well with water flowing from top to bottom"
-          src={Fountain}
-        />
-      </div>
-    </DropTarget>
+    <div className="well">
+      <DropTarget className="well" targetKey="well">
+        <div className="img__wrapper">
+          <img
+            alt="A yellow wishing well with water flowing from top to bottom"
+            loading="eager"
+            src={Fountain}
+          />
+        </div>
+      </DropTarget>
+    </div>
   )
 }
 

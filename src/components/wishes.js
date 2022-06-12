@@ -6,9 +6,9 @@ import "../styles/components/wishes.scss"
 const Wishes = ({ isVisible, toggleVisibility }) => {
   const [wish, setWish] = useState({})
 
-  const hide = () => {
-    toggleVisibility(false)
-  }
+  // const hide = () => {
+  //   toggleVisibility(false)
+  // }
 
   useEffect(() => {
     const fetchData = async () => {

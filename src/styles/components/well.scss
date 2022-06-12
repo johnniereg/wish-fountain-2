@@ -1,6 +1,19 @@
 .well {
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 100px;
+  min-height: 0;
+  min-width: 0;
+
+  .img__wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+
   img {
-    max-height: 75vh;
-    max-width: 400px;
+    max-height: 100%;
+    max-width: 100%;
   }
 }

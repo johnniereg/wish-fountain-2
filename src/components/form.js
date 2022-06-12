@@ -22,19 +22,26 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then(() => {
-        hide()
-        toggleWish(true)
+    console.log(state, "state")
+
+    if (Object.keys(state).length === 0) {
+      hide()
+      toggleWish(true)
+    } else {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...state,
+        }),
       })
-      .catch(error => alert(error))
+        .then(() => {
+          hide()
+          toggleWish(true)
+        })
+        .catch(error => alert(error))
+    }
   }
 
   const classes = isVisible ? "form visible" : "form hidden"

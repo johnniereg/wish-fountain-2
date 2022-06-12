@@ -1,0 +1,16 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  .image__wrapper {
+    height: 100%;
+    max-height: 100px;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
