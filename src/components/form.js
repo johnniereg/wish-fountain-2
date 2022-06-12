@@ -37,12 +37,15 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       .catch(error => alert(error))
   }
 
-  const classes = isVisible ? "form visible" : "form hidden"
+  const classes = isVisible ? "form__wrapper visible" : "form__wrapper hidden"
 
   return (
     <div className={classes}>
-      <button onClick={hide}>X</button>
+      <button className="close" onClick={hide}>
+        X
+      </button>
       <form
+        className="form"
         name="wish-form"
         method="post"
         data-netlify="true"
@@ -52,7 +55,9 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
         <input type="hidden" name="wish-form" value="wish" />
         <label htmlFor="text">Test</label>
         <input name="textarea" type="text" onChange={handleChange} />
-        <button type="submit">Submit</button>
+        <button className="submit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   )

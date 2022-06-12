@@ -1,7 +1,19 @@
-.form {
+.form__wrapper {
   background-color: yellow;
   border: 1px solid black;
   opacity: 1;
   padding: 25px;
   position: absolute;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }

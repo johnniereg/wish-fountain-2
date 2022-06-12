@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import Layout from "../components/layout"
 import App from "../components/app"
 
-import "../styles/index.css"
+import "../styles/index.scss"
 
 const IndexPage = () => {
   return (

@@ -12,8 +12,9 @@ button {
   border: 0;
   background: transparent;
   color: var(--color-primary);
-  cursor: pointer;
+  font-family: var(--font-sans);
   font-weight: bold;
+  cursor: pointer;
 }
 
 input {
