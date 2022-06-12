@@ -26,11 +26,12 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
           }
         )
         const json = await response.json()
+        console.log(json, "json")
         if (json.length) {
           wish = json[Math.floor(Math.random() * json.length)] // pick a random wish
         } else {
           wish = {
-            title: "No one has made a wish... yet...",
+            body: "No one has made a wish... yet...",
           }
         }
         setWish(wish)
@@ -42,12 +43,12 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
   }, [])
 
   return (
-    <div className={`wishes ${isVisible ? "" : "hidden"}`}>
+    <div className={`wishes ${isVisible ? "visible" : "hidden"}`}>
       <div className="wishes__wrapper">
-        <div>Someone else made a wish:</div>
-        {wish && <div>{wish.title}</div>}
-
-        <button onClick={hide}>Close</button>
+        <div className="wishes__text">
+          <p>{wish.body}</p>
+        </div>
+        {/* <button onClick={hide}>X</button> */}
       </div>
     </div>
   )
