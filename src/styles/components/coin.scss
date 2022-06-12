@@ -12,8 +12,11 @@
   position: absolute;
 
   .icon {
-    -webkit-filter: drop-shadow(2px 2px 2px #222);
-    filter: drop-shadow(2px 2px 2px #222);
+    // -webkit-filter: drop-shadow(2px 2px 2px #222);
+    // filter: drop-shadow(2px 2px 2px #222);
+    cursor: move;
+    max-height: 50px;
+    max-width: 50px;
   }
 
   &.Gem-1 {
@@ -27,68 +30,118 @@
   }
 
   &.Gem-3 {
-    left: 22%;
+    left: 23%;
     top: -25%;
   }
 
   &.Gem-4 {
-    left: 29%;
-    top: -7%;
+    left: 30%;
+    top: 0%;
+    .icon {
+      max-width: 25px;
+    }
   }
 
   &.Gem-5 {
-    right: 25%;
-    top: 0;
+    right: 35%;
+    top: 25%;
+    .icon {
+      max-width: 20px;
+    }
   }
 
   &.Gem-6 {
     right: 35%;
     top: 10%;
+    .icon {
+      max-width: 20px;
+    }
   }
 
   &.Gem-7 {
     right: 37%;
     top: 15%;
+    .icon {
+      max-width: 20px;
+    }
   }
 
   &.Gem-8 {
-    left: 50%;
-    bottom: 10%;
+    right: 28%;
+    top: -10%;
+    .icon {
+      max-height: 75px;
+      max-width: 75px;
+    }
   }
+
   &.Gem-9 {
-    left: 5%;
-    bottom: 10%;
+    right: 26%;
+    top: 25%;
+    .icon {
+      max-width: 35px;
+    }
   }
+
   &.Gem-10 {
-    left: 5%;
-    bottom: 10%;
+    right: 22%;
+    top: 15%;
+    .icon {
+      max-width: 35px;
+    }
   }
+
   &.Gem-11 {
-    left: 5%;
-    bottom: 10%;
+    right: 12%;
+    top: 0;
+    .icon {
+      max-width: 50px;
+    }
   }
+
   &.Gem-12 {
-    left: 5%;
-    bottom: 10%;
+    left: 15%;
+    top: 0;
+    .icon {
+      max-height: 50px;
+    }
   }
+
   &.Star-1 {
-    left: 5%;
-    bottom: 10%;
+    right: 23%;
+    top: -20%;
+    .icon {
+      max-height: 50px;
+    }
   }
+
   &.Star-2 {
-    left: 5%;
-    bottom: 10%;
+    left: 18%;
+    top: -15%;
+    .icon {
+      max-height: 50px;
+    }
   }
+
   &.Star-3 {
-    left: 5%;
-    bottom: 10%;
+    left: 33%;
+    top: 15%;
+    .icon {
+      max-height: 50px;
+    }
   }
+
   &.Star-4 {
-    left: 5%;
-    bottom: 10%;
+    right: 16%;
+    top: -30%;
+    .icon {
+      max-height: 85px;
+      max-width: 85px;
+    }
   }
+
   &.Star-5 {
-    left: 5%;
-    bottom: 10%;
+    right: 12%;
+    top: -35%;
   }
 }
