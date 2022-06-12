@@ -7,3 +7,19 @@
   visibility: visible;
   transition: opacity 1s;
 }
+
+button {
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input {
+  background: transparent;
+  border-radius: 3px;
+  border-width: 1px;
+  color: var(--color-primary);
+  padding: 5px;
+}

@@ -41,7 +41,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
 
   return (
     <div className={classes}>
-      <button onClick={hide}>Close Form</button>
+      <button onClick={hide}>X</button>
       <form
         name="wish-form"
         method="post"
@@ -51,7 +51,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       >
         <input type="hidden" name="wish-form" value="wish" />
         <label htmlFor="text">Test</label>
-        <input name="text" type="text" onChange={handleChange} />
+        <input name="textarea" type="text" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
     </div>

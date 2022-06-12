@@ -42,7 +42,7 @@ const Info = () => {
               toggleVisibility(false)
             }}
           >
-            X
+            <span>X</span>
           </button>
         </div>
         <div className={`info__wrapper `}>

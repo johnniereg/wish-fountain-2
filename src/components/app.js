@@ -57,7 +57,9 @@ const App = () => {
 
   return (
     <div className="app">
-      <img src={title}></img>
+      <div className="hero">
+        <img alt="Wish Fountain" className="hero__image" src={title}></img>
+      </div>
 
       <Well isDragging={isDragging} />
 

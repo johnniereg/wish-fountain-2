@@ -6,4 +6,16 @@
   justify-content: center;
   position: relative;
   width: 100%;
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 30px;
+
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
 }
