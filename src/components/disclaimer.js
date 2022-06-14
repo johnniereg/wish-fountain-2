@@ -8,8 +8,8 @@ const Disclaimer = () => {
       <div className="disclaimer__wrapper">
         <p className="disclaimer__text">
           <em>
-            Please do not use any racist, sexist, homophobic or otherwise
-            hateful language
+            Please do not use any racist, sexist, homophobic, ableist or
+            otherwise hateful language
           </em>
         </p>
       </div>
