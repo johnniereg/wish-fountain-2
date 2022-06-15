@@ -6,7 +6,7 @@ import App from "../components/app"
 
 import "../styles/index.scss"
 
-import favicon from "../images/make-wish.png"
+import favicon from "../images/star-4.png"
 
 const IndexPage = () => {
   return (
