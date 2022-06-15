@@ -24,7 +24,8 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
     const form = e.target
     console.log(state, "state")
 
-    if (Object.keys(state).length === 0) {
+    if (!state.textarea) {
+      console.log("empty wish submitted")
       hide()
       toggleWish(true)
     } else {
