@@ -6,9 +6,9 @@ import "../styles/components/wishes.scss"
 const Wishes = ({ isVisible, toggleVisibility }) => {
   const [wish, setWish] = useState({})
 
-  // const hide = () => {
-  //   toggleVisibility(false)
-  // }
+  const hide = () => {
+    toggleVisibility(false)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +48,9 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
         <div className="wishes__text">
           <p>{wish.body}</p>
         </div>
-        {/* <button onClick={hide}>X</button> */}
+        <button className="wishes__close" onClick={hide}>
+          X
+        </button>
       </div>
     </div>
   )

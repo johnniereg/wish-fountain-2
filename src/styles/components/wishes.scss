@@ -1,8 +1,11 @@
 .wishes {
+  background-color: #ffff00c7;
   background-image: url(../../images/read-wish.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  font-style: italic;
+  font-weight: bold;
   opacity: 1;
   position: absolute;
   height: 100%;
@@ -10,6 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 3;
 
   &__wrapper {
     align-items: center;
@@ -19,5 +23,38 @@
     justify-content: center;
     position: absolute;
     width: 100%;
+  }
+
+  &__text {
+    margin-left: 15px;
+    max-height: 75%;
+    overflow-y: auto;
+    text-align: center;
+    width: 25%;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }
