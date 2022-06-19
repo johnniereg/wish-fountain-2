@@ -13,7 +13,7 @@ const Info = () => {
   }
 
   return (
-    <div className="info">
+    <div className={`info ${panelVisible ? "info--open" : "info--close"}`}>
       <div className={`info__icon ${panelVisible ? "hidden" : "visible"}`}>
         <button
           onClick={() => {

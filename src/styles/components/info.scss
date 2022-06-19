@@ -4,6 +4,14 @@
   right: 25px;
   z-index: 2;
 
+  &--open {
+    @media screen and (max-width: 769px) {
+      bottom: 75px;
+      right: unset;
+      width: 100%;
+    }
+  }
+
   &__panel {
     background-image: url(../../images/pop-up.png);
     background-size: contain;
@@ -13,6 +21,10 @@
     flex-direction: column;
     height: 286px;
     width: 400px;
+
+    @media screen and (max-width: 769px) {
+      width: unset;
+    }
 
     &:before,
     &:after {
