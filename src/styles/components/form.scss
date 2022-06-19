@@ -40,6 +40,10 @@
       font-weight: bold;
       font-style: italic;
       padding-bottom: 12px;
+
+      @media screen and (max-width: 769px) {
+        padding-bottom: 0;
+      }
     }
 
     button {
