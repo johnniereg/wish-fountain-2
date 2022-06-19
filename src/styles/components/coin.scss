@@ -5,6 +5,11 @@
   right: 0;
   bottom: 0;
   height: 150px;
+
+  @media screen and (max-width: 769px) {
+    display: block;
+    height: 125px;
+  }
 }
 
 .coin {
@@ -17,131 +22,259 @@
     cursor: move;
     max-height: 50px;
     max-width: 50px;
+
+    @media screen and (max-width: 769px) {
+      max-height: 35px;
+      max-width: 35px;
+    }
   }
 
   &.Gem-1 {
     left: 25%;
     top: 0;
+
+    @media screen and (max-width: 769px) {
+      top: 5%;
+    }
   }
 
   &.Gem-2 {
     left: 20%;
     top: 3%;
+
+    @media screen and (max-width: 769px) {
+      top: 40%;
+    }
   }
 
   &.Gem-3 {
     left: 23%;
     top: -25%;
+
+    @media screen and (max-width: 769px) {
+      left: 2%;
+      top: -35%;
+    }
   }
 
   &.Gem-4 {
     left: 30%;
     top: 0%;
+
     .icon {
       max-width: 25px;
+    }
+
+    @media screen and (max-width: 769px) {
+      left: 40%;
+
+      .icon {
+        max-width: 20px;
+      }
     }
   }
 
   &.Gem-5 {
     right: 35%;
     top: 25%;
+
     .icon {
       max-width: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 45%;
+      top: 50%;
+
+      .icon {
+        max-width: 15px;
+      }
     }
   }
 
   &.Gem-6 {
     right: 35%;
     top: 10%;
+
     .icon {
       max-width: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 45%;
+      top: 30%;
+      .icon {
+        max-width: 15px;
+      }
     }
   }
 
   &.Gem-7 {
     right: 37%;
     top: 15%;
+
     .icon {
       max-width: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 50%;
+      top: 40%;
+
+      .icon {
+        max-width: 15px;
+      }
     }
   }
 
   &.Gem-8 {
     right: 28%;
     top: -10%;
+
     .icon {
       max-height: 75px;
       max-width: 75px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 40%;
+
+      .icon {
+        max-height: 45px;
+        max-width: 45px;
+      }
     }
   }
 
   &.Gem-9 {
     right: 26%;
     top: 25%;
+
     .icon {
       max-width: 35px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 33%;
+
+      .icon {
+        max-width: 40px;
+      }
     }
   }
 
   &.Gem-10 {
     right: 22%;
     top: 15%;
+
     .icon {
       max-width: 35px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 2%;
+      top: -35%;
+      .icon {
+        max-width: 15px;
+      }
     }
   }
 
   &.Gem-11 {
     right: 12%;
     top: 0;
+
     .icon {
       max-width: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 3%;
+      top: -10%;
+
+      .icon {
+        max-width: 30px;
+      }
     }
   }
 
   &.Gem-12 {
     left: 15%;
     top: 0;
+
     .icon {
       max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      left: 5%;
+      top: 15%;
     }
   }
 
   &.Star-1 {
     right: 23%;
     top: -20%;
+
     .icon {
       max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      right: 30%;
     }
   }
 
   &.Star-2 {
     left: 18%;
     top: -15%;
+
     .icon {
       max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      left: 13%;
     }
   }
 
   &.Star-3 {
     left: 33%;
     top: 15%;
+
     .icon {
       max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      top: 33%;
+      left: 35%;
     }
   }
 
   &.Star-4 {
     right: 16%;
     top: -30%;
+
     .icon {
       max-height: 85px;
       max-width: 85px;
+    }
+
+    @media screen and (max-width: 769px) {
+      top: -15%;
+      .icon {
+        max-height: 70px;
+        max-width: 70px;
+      }
     }
   }
 
   &.Star-5 {
     right: 12%;
     top: -35%;
+
+    @media screen and (max-width: 769px) {
+    }
   }
 }

@@ -27,10 +27,9 @@ const Info = () => {
         >
           <img
             alt="Question Mark icon to open info panel"
-            className="icon"
+            className="icon icon--info"
             draggable={false}
             src={icon}
-            style={{ marginBottom: 0, maxHeight: "75px" }}
           ></img>
         </button>
       </div>

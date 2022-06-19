@@ -5,6 +5,10 @@
   min-height: 0;
   min-width: 0;
 
+  @media screen and (max-width: 769px) {
+    margin-bottom: 150px;
+  }
+
   .img__wrapper {
     display: flex;
     height: 100%;

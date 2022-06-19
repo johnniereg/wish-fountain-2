@@ -7,6 +7,10 @@
   &__wrapper {
     margin: 0 100px;
     overflow: hidden;
+
+    @media screen and (max-width: 769px) {
+      margin: 0 20px;
+    }
   }
 }
 
@@ -23,6 +27,11 @@
   -moz-animation: my-animation 25s linear infinite;
   -webkit-animation: my-animation 25s linear infinite;
   animation: my-animation 25s linear infinite;
+
+  @media screen and (max-width: 769px) {
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
 }
 
 /* for Firefox */

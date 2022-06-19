@@ -55,6 +55,10 @@
       resize: none;
       width: 100%;
 
+      @media screen and (max-width: 769px) {
+        height: 75px;
+      }
+
       &:focus {
         outline: none;
       }
