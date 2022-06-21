@@ -44,7 +44,6 @@ body {
   font-family: var(--font-sans);
   font-weight: normal;
   height: 100vh;
-  height: -webkit-fill-available;
   margin: 0;
   word-wrap: break-word;
   width: 100vw;
