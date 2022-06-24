@@ -30,13 +30,13 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
         const json = await response.json()
         if (json.length) {
           setWishes(json)
-          setWish(wishes[Math.floor(Math.random() * wishes.length)]) // pick a random wish
+          wish = json[Math.floor(Math.random() * json.length)] // pick a random wish
         } else {
           wish = {
             body: "No one has made a wish... yet...",
           }
         }
-        setWish(wishes[Math.floor(Math.random() * wishes.length)])
+        setWish(wish)
       } catch (error) {
         console.log("Error: ", error)
       }
