@@ -27,10 +27,16 @@
 
   &__text {
     margin-left: 15px;
-    max-height: 75%;
+    max-height: 25%;
+    max-width: 250px;
     overflow-y: auto;
     text-align: center;
     width: 25%;
+
+    @media screen and (max-width: 769px) {
+      max-height: 150px;
+      max-width: 150px;
+    }
 
     &::-webkit-scrollbar {
       width: 5px;
