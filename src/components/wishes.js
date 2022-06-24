@@ -5,9 +5,11 @@ import "../styles/components/wishes.scss"
 
 const Wishes = ({ isVisible, toggleVisibility }) => {
   const [wish, setWish] = useState({})
+  const [wishes, setWishes] = useState([])
 
   const hide = () => {
     toggleVisibility(false)
+    setWish(wishes[Math.floor(Math.random() * wishes.length)])
   }
 
   useEffect(() => {
@@ -26,15 +28,15 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
           }
         )
         const json = await response.json()
-        console.log(json, "json")
         if (json.length) {
-          wish = json[Math.floor(Math.random() * json.length)] // pick a random wish
+          setWishes(json)
+          setWish(wishes[Math.floor(Math.random() * wishes.length)]) // pick a random wish
         } else {
           wish = {
             body: "No one has made a wish... yet...",
           }
         }
-        setWish(wish)
+        setWish(wishes[Math.floor(Math.random() * wishes.length)])
       } catch (error) {
         console.log("Error: ", error)
       }

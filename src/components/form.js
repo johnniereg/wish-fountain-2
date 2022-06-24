@@ -22,10 +22,8 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    console.log(state, "state")
 
     if (!state.textarea) {
-      console.log("empty wish submitted")
       hide()
       toggleWish(true)
     } else {
