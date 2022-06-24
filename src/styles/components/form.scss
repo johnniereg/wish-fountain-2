@@ -34,6 +34,10 @@
     margin-left: 6%;
     width: 30%;
 
+    @media screen and (min-width: 769px) {
+      max-width: 250px;
+    }
+
     label {
       color: yellow;
       font-size: 14px;
