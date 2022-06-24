@@ -212,6 +212,201 @@
     }
   }
 
+  &.Gem-13 {
+    left: 28%;
+    top: -45%;
+
+    .icon {
+      max-height: 40px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-14 {
+    left: 40%;
+    top: 35%;
+
+    .icon {
+      max-height: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-15 {
+    right: 38%;
+    top: 30%;
+
+    .icon {
+      max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-16 {
+    left: 13%;
+    top: -90%;
+
+    .icon {
+      max-height: 30px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-17 {
+    left: 12%;
+    top: -60%;
+
+    .icon {
+      max-height: 25px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-18 {
+    right: 15%;
+    top: -70%;
+
+    .icon {
+      max-height: 50px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-19 {
+    right: 7%;
+    top: -130%;
+
+    .icon {
+      max-height: 30px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-20 {
+    left: 22%;
+    top: -27%;
+
+    .icon {
+      max-width: 15px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-21 {
+    left: 20%;
+    top: -25%;
+
+    .icon {
+      max-width: 15px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-22 {
+    left: 29%;
+    top: 30%;
+
+    .icon {
+      max-height: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-23 {
+    right: 21%;
+    top: -65%;
+
+    .icon {
+      max-height: 40px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-24 {
+    right: 21%;
+    top: -35%;
+
+    .icon {
+      max-height: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
+  &.Gem-25 {
+    right: 11%;
+    top: -110%;
+
+    .icon {
+      max-height: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+      left: 5%;
+      top: 15%;
+    }
+  }
+
   &.Star-1 {
     right: 23%;
     top: -20%;
@@ -263,6 +458,7 @@
 
     @media screen and (max-width: 769px) {
       top: -15%;
+
       .icon {
         max-height: 70px;
         max-width: 70px;
@@ -275,6 +471,46 @@
     top: -35%;
 
     @media screen and (max-width: 769px) {
+    }
+  }
+
+  &.Star-6 {
+    left: 19%;
+    top: -65%;
+
+    .icon {
+      max-height: 55px;
+    }
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+    }
+  }
+
+  &.Star-7 {
+    right: 26%;
+    top: -45%;
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+    }
+  }
+
+  &.Star-8 {
+    left: 10%;
+    top: -155%;
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+    }
+  }
+
+  &.Star-9 {
+    left: 15%;
+    top: -55%;
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
     }
   }
 }
