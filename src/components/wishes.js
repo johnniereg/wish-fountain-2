@@ -17,7 +17,7 @@ const Wishes = ({ isVisible, toggleVisibility }) => {
       try {
         let wish
         const response = await fetch(
-          "https://api.netlify.com/api/v1/sites/94286650-7f42-4876-a795-167e52313b8f/forms/628bd98d7a3f3700087883c5/submissions",
+          "https://api.netlify.com/api/v1/sites/5d64a271-84c3-47bf-8287-8921bb45eb77/forms/67e811fcc4938600089371af/submissions",
           {
             method: "GET",
             headers: {
