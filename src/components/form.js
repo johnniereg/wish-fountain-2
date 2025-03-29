@@ -50,7 +50,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       <div className="form__wrapper">
         <form
           className="wish-form"
-          name="wish-form"
+          name="art-city-wish"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
