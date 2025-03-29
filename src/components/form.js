@@ -1,9 +1,11 @@
 import React, { useState } from "react"
+import { Filter } from "bad-words"
 
 import "../styles/components/form.scss"
 
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({})
+  const filter = new Filter()
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -23,10 +25,18 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
     e.preventDefault()
     const form = e.target
 
+    const formData = new FormData(form)
+    const textarea = formData.get("textarea")
+
+
     if (!state.textarea) {
       hide()
       toggleWish(true)
     } else {
+      if (filter.isProfane(textarea)) {
+        alert("Please, no profanity.")
+        return
+      } 
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

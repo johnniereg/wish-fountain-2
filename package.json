@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "bad-words": "^4.0.0",
     "gatsby": "^4.13.0",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
     "gatsby-plugin-image": "^2.13.0",
@@ -31,8 +32,8 @@
   ],
   "license": "0BSD",
   "engines": {
-  "node": ">=18.0.0"
-},
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
