@@ -1,52 +1,53 @@
-import * as React from "react"
-import { useState } from "react"
+import * as React from "react";
+import { useState } from "react";
 
-import "../styles/components/app.scss"
+import "../styles/components/app.scss";
 
-import Hero from "../components/hero"
-import Well from "../components/well"
-import Coin from "../components/coin"
-import Form from "../components/form"
-import Wishes from "../components/wishes"
-import Info from "../components/info"
-import Disclaimer from "../components/disclaimer"
+import Hero from "../components/hero";
+import Well from "../components/well";
+import Coin from "../components/coin";
+import Form from "../components/form";
+import Wishes from "../components/wishes";
+import Info from "../components/info";
+import Carousel from "../components/carousel";
+import Disclaimer from "../components/disclaimer";
 
-import gem1 from "../images/gem-1.png"
-import gem2 from "../images/gem-2.png"
-import gem3 from "../images/gem-3.png"
-import gem4 from "../images/gem-4.png"
-import gem5 from "../images/gem-5.png"
-import gem6 from "../images/gem-6.png"
-import gem7 from "../images/gem-7.png"
-import gem8 from "../images/gem-8.png"
-import gem9 from "../images/gem-9.png"
-import gem10 from "../images/gem-10.png"
-import gem11 from "../images/gem-11.png"
-import gem12 from "../images/gem-12.png"
+import gem1 from "../images/gem-1.png";
+import gem2 from "../images/gem-2.png";
+import gem3 from "../images/gem-3.png";
+import gem4 from "../images/gem-4.png";
+import gem5 from "../images/gem-5.png";
+import gem6 from "../images/gem-6.png";
+import gem7 from "../images/gem-7.png";
+import gem8 from "../images/gem-8.png";
+import gem9 from "../images/gem-9.png";
+import gem10 from "../images/gem-10.png";
+import gem11 from "../images/gem-11.png";
+import gem12 from "../images/gem-12.png";
 
-import gem13 from "../images/gem-13.png"
-import gem14 from "../images/gem-14.png"
-import gem15 from "../images/gem-15.png"
-import gem16 from "../images/gem-16.png"
-import gem17 from "../images/gem-17.png"
-import gem18 from "../images/gem-18.png"
-import gem19 from "../images/gem-19.png"
+import gem13 from "../images/gem-13.png";
+import gem14 from "../images/gem-14.png";
+import gem15 from "../images/gem-15.png";
+import gem16 from "../images/gem-16.png";
+import gem17 from "../images/gem-17.png";
+import gem18 from "../images/gem-18.png";
+import gem19 from "../images/gem-19.png";
 
-import star1 from "../images/star-1.png"
-import star2 from "../images/star-2.png"
-import star3 from "../images/star-3.png"
-import star4 from "../images/star-4.png"
-import star5 from "../images/star-5.png"
+import star1 from "../images/star-1.png";
+import star2 from "../images/star-2.png";
+import star3 from "../images/star-3.png";
+import star4 from "../images/star-4.png";
+import star5 from "../images/star-5.png";
 
-import star6 from "../images/star-6.png"
-import star7 from "../images/star-7.png"
-import star8 from "../images/star-8.png"
-import star9 from "../images/star-9.png"
+import star6 from "../images/star-6.png";
+import star7 from "../images/star-7.png";
+import star8 from "../images/star-8.png";
+import star9 from "../images/star-9.png";
 
 const App = () => {
-  const [formVisibility, setFormVisibility] = useState(false)
-  const [wishVisibility, setWishVisibility] = useState(false)
-  const [isDragging, setIsDragging] = useState(false)
+  const [formVisibility, setFormVisibility] = useState(false);
+  const [wishVisibility, setWishVisibility] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const coins = [
     { img: gem1, name: "Gem-1" },
@@ -83,7 +84,7 @@ const App = () => {
     { img: star7, name: "Star-7" },
     { img: star8, name: "Star-8" },
     { img: star9, name: "Star-9" },
-  ]
+  ];
 
   return (
     <div className="app">
@@ -93,7 +94,7 @@ const App = () => {
       </div>
 
       <div className="coins">
-        {coins.map(coin => {
+        {coins.map((coin) => {
           return (
             <Coin
               image={coin.img}
@@ -104,22 +105,23 @@ const App = () => {
               x={coin.x}
               y={coin.y}
             />
-          )
+          );
         })}
       </div>
 
       <Form
         toggleForm={setFormVisibility}
         toggleWish={() => {
-          setWishVisibility(true)
+          setWishVisibility(true);
         }}
         isVisible={formVisibility}
       />
       <Wishes isVisible={wishVisibility} toggleVisibility={setWishVisibility} />
       <Info />
       <Disclaimer />
+      <Carousel coins={coins} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

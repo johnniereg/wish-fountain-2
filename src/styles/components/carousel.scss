@@ -1,0 +1,113 @@
+.carousel {
+  bottom: 25px;
+  position: absolute;
+  left: 25px;
+  z-index: 2;
+
+  &--open {
+    @media screen and (max-width: 769px) {
+      bottom: 75px;
+      left: unset;
+      width: 100%;
+    }
+  }
+
+  &__panel {
+    background-image: url(../../images/pop-up.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 286px;
+    width: 400px;
+
+    @media screen and (max-width: 769px) {
+      width: unset;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      min-height: 40px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 10px;
+  }
+
+  &__wrapper {
+    overflow-y: scroll;
+    margin: 15px 30px 0 35px;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__icon {
+    &.hidden {
+      display: none;
+    }
+
+    img {
+      margin-bottom: 0;
+      max-height: 75px;
+
+      @media screen and (max-width: 769px) {
+        max-height: 50px;
+      }
+    }
+  }
+
+  .icon {
+    height: 100%;
+
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+  }
+
+  h1 {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
