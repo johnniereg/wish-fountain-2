@@ -6,8 +6,10 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
+  Image,
 } from "pure-react-carousel";
 
+import "pure-react-carousel/dist/react-carousel.es.css";
 import "../styles/components/carousel.scss";
 
 // import icon from "../images/exclaymation-mark.png";
@@ -63,65 +65,65 @@ const Carousel = ({ coins }) => {
             <span>X</span>
           </button>
         </div>
-        <div className={`carousel__wrapper `}>
-          <CarouselProvider
-            className="caraousel__continer"
-            naturalSlideWidth={100}
-            naturalSlideHeight={20}
-            totalSlides={coins.length}
-            currentSlide={randomStartIndex}
+        <CarouselProvider
+          className="carousel__container"
+          naturalSlideWidth={50}
+          naturalSlideHeight={50}
+          totalSlides={1}
+          currentSlide={0}
+          infinite
+        >
+          {/* <Slider className="carousel__wrapper_slider"> */}
+          <Slider>
+            {coins.map((coin, index) => (
+              <Slide index={index} key={coin.name} classname="carousel__slide">
+                <h1 className="carousel__title">{coin.name}</h1>
+                <Image
+                  className="carousel_image"
+                  src={coin.img}
+                  alt={`Coin ${coin.name}`}
+                />
+                <p>
+                  this is an artwork by a child who is amazing. She/He/They will
+                  be the greatest person in whatever they do in the future and
+                  will bring world peace.
+                </p>
+              </Slide>
+            ))}
+          </Slider>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "5px",
+            }}
           >
-            <Slider>
-              {coins.map((coin, index) => (
-                <Slide index={index} key={index}>
-                  <div width="300px">
-                    <h1 className="carousel__title">{coin.name}</h1>
-                    <img
-                      src={coin.img}
-                      alt={`Artwork ${index + 1}`}
-                      style={{ width: "100%" }}
-                    />
-                    <p style={{ textAlign: "center", marginTop: "10px" }}>
-                      {coin.name}
-                    </p>
-                  </div>
-                </Slide>
-              ))}
-            </Slider>
-            <div
+            <ButtonBack
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "15px",
+                padding: "8px 12px",
+                backgroundColor: "#007acc",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
               }}
             >
-              <ButtonBack
-                style={{
-                  padding: "8px 12px",
-                  backgroundColor: "#007acc",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                }}
-              >
-                Back
-              </ButtonBack>
-              <ButtonNext
-                style={{
-                  padding: "8px 12px",
-                  backgroundColor: "#007acc",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                }}
-              >
-                Next
-              </ButtonNext>
-            </div>
-          </CarouselProvider>
-        </div>
+              Back
+            </ButtonBack>
+            <ButtonNext
+              style={{
+                padding: "8px 12px",
+                backgroundColor: "#007acc",
+                color: "#fff",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
+              }}
+            >
+              Next
+            </ButtonNext>
+          </div>
+        </CarouselProvider>
       </div>
     </div>
   );
