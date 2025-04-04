@@ -59,46 +59,24 @@ const Info = () => {
               3. Submit your wish. As an act of reciprocal exchange, someone
               else's wish will be shared with you in return.
             </p>
-            <p>4. That's all. You can do it again if you want.</p>
+            <p>4. Check our Wish Gallery over the next few days, an Art City participant *may* grant your wish via artmaking! Images will be uploaded from April 10-13th.</p>
+            <p>*not every wish is guaranteed fulfillment via art <nobr>:(</nobr></p>
             <hr></hr>
             <p>
-              Over the past few years I have been thinking deeply about wish
-              fulfillment, illness, and fantasy. My obsession with these
-              intertwined themes stems from my own experience receiving a wish
-              trip to Disney World when I was ten, granted after I finished two
-              years of treatment for Lymphoblastic Lymphoma.
+              Wish Fountain Art City Edition website was made collaboratively by Art City participants in a workshop led by lead artist Hannah Doucet.
             </p>
+            <hr></hr>
             <p>
-              Wishes made with wish-granting agencies are "official" wishes,
-              made within a philanthropic industry that guarantees fulfillment.
-              I'm fascinated by the cultural complexity of the “wish,” a stated
-              desire then realized by staff at these agencies. In this context,
-              wish-fulfillment is aligned with corporate structures and
-              transformed into something tangible and executable. In the
-              formulation of wish-granting agencies, it is as if the illness has
-              taken the place of the ritualistic wish object—the wishbone, the
-              wishing well, the wish chip, the shooting star. The child wishes
-              on their illness. Wish-granting agencies may appear to be fairy
-              godmother-like, stating that a child may wish for anything. But,
-              in reality, the wish has to be deemed achievable.
+              Art City is a not-for-profit community art studio dedicated to providing people of all ages with innovative and professional art programming, free of charge. Art City’s primary goal is to provide space and tools for anyone who wishes to express themselves creatively.
+
+              Art City is located on Treaty 1 territory and the land on which we gather is the traditional territory of Anishinaabeg, Cree, Anisininew, Dakota, and Dene Peoples, and on the homeland of the Métis Nation
             </p>
+            <hr></hr>
             <p>
-              <em>Wish fountain</em> represents another kind of wishing, a more
-              familiar one, one that doesn't guarantee fulfillment, a stab in
-              the dark, a toss into the abyss. The wish doesn't have to be
-              achievable, doesn't have to make sense. You wish and in this
-              context, the act of wishing returns to you a stranger's wish. This
-              is my favourite part: the exchange. One wish doesn't necessarily
-              yield satisfaction, but instead, yields another, revealing a
-              unfurling network of wish-making. I'd like to think that the
-              randomness of it all might do away with any lingering
-              superstitions you may have that sharing your wish makes it
-              unlikely to come true. You aren't speaking it aloud. You are
-              tossing the wish into the fountain, it just turns out there is
-              someone on the other side.
+              Hannah Doucet is a visual artist and arts educator from Winnipeg, based in Toronto, Canada. She works within photography, video and sculpture to explore fantasy, illness, and the body. She has exhibited at venues including Gallery 44, National Gallery of Canada, PLATFORM, Arsenal Contemporary Art and The New Gallery. Doucet won the inaugural PLATFORM Photography Award and was a recipient of the National Gallery of Canada's New Generation Photography award in 2023. She is one of four founders of Blinkers, a gallery in Winnipeg, where she was a co-director until August 2021. Doucet attended Skowhegan School of Painting and Sculpture in Summer 2024.
             </p>
-            <p>Visuals and text by Hannah Doucet</p>
-            <p>Code by Johnnie Regalado</p>
+            <hr></hr>
+            <p>Code by Johnnie Regalado and Max Hur</p>
           </div>
         </div>
       </div>
