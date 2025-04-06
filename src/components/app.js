@@ -86,6 +86,17 @@ const App = () => {
     { img: star9, name: "Star-9" },
   ];
 
+  const art = [
+    { img: gem1, name: "Gem-1" },
+    { img: gem2, name: "Gem-2" },
+    { img: gem3, name: "Gem-3" },
+    { img: gem4, name: "Gem-4" },
+    { img: gem5, name: "Gem-5" },
+    { img: gem6, name: "Gem-6" },
+    { img: gem7, name: "Gem-7" },
+    { img: gem8, name: "Gem-8" },
+    { img: gem9, name: "Gem-9" }
+  ]
   return (
     <div className="app">
       <div className="app__wrapper">
@@ -119,7 +130,7 @@ const App = () => {
       <Wishes isVisible={wishVisibility} toggleVisibility={setWishVisibility} />
       <Info />
       <Disclaimer />
-      <Carousel coins={coins} />
+      <Carousel art={art} />
     </div>
   );
 };

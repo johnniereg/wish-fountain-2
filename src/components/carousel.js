@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   CarouselProvider,
   Slider,
@@ -12,142 +12,167 @@ import {
 import "../styles/components/carousel.scss";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-// import icon from "../images/exclaymation-mark.png";
 import icon from "../images/semi-colon.png";
 
-const Carousel = ({ coins }) => {
+const Carousel = ({ art }) => {
   const [panelVisible, setPanelVisible] = useState(false);
   const [randomStartIndex, setRandomStartIndex] = useState(0);
+  const panelRef = useRef(null); // Reference to the panel element
+  const [fullscreenImage, setFullscreenImage] = useState(null); // State to track the fullscreen image
 
   const toggleVisibility = (val) => {
     if (val) {
       // When opening, generate a new random start slide
-      setRandomStartIndex(Math.floor(Math.random() * coins.length));
+      setRandomStartIndex(Math.floor(Math.random() * art.length));
     }
     setPanelVisible(val);
   };
 
+  const openFullscreen = (imgSrc) => {
+    setFullscreenImage(imgSrc); // Set the clicked image as fullscreen
+  };
+
+  const closeFullscreen = () => {
+    setFullscreenImage(null); // Close the fullscreen mode
+  };
+
+  // Close the panel if a click occurs outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (panelRef.current && !panelRef.current.contains(event.target)) {
+        setPanelVisible(false);
+      }
+    };
+
+    if (panelVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [panelVisible]);
+
   return (
-    <div
-      className={`gallery ${
-        panelVisible ? "gallery--open" : "gallery--close"
-      }`}
-    >
-      <div className={`gallery__icon ${panelVisible ? "hidden" : "visible"}`}>
-        <button
-          onClick={() => {
-            toggleVisibility(true);
-          }}
-          style={{
-            backgroundColor: "transparent",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          {" "}
-          <img
-            alt="Carousel icon to open carousel panel"
-            className="icon icon--carousel"
-            draggable={false}
-            src={icon}
-          ></img>
-        </button>
-      </div>
-      <div className={`gallery__panel ${panelVisible ? "visible" : "hidden"}`}>
-        <div className="gallery__controls">
+    <>
+      <div
+        className={`gallery ${panelVisible ? "gallery--open" : "gallery--close"}`}
+      >
+        <div className={`gallery__icon ${panelVisible ? "hidden" : "visible"}`}>
           <button
             onClick={() => {
-              toggleVisibility(false);
+              toggleVisibility(true);
+            }}
+            style={{
+              backgroundColor: "transparent",
+              border: "none",
+              cursor: "pointer",
             }}
           >
-            <span>X</span>
+            <img
+              alt="Carousel icon to open carousel panel"
+              className="icon icon--carousel"
+              draggable={false}
+              src={icon}
+            ></img>
           </button>
         </div>
-        <div className={`gallery__wrapper `}>
-          <CarouselProvider
-            className="carousel__container"
-            naturalSlideWidth={100}
-            naturalSlideHeight={100}
-            totalSlides={coins.length}
-            currentSlide={randomStartIndex}
-            loop={true}
-          >
-            <Slider>
-              {coins.map((coin, index) => (
-                <Slide index={index} key={coin.name}>
-                  <div className="carousel__slider-box">
-                    <div>
-                      <h1 className="carousel__title">{coin.name}</h1>
-                    </div>
-                    <div className="carousel__image">
-                      <Image
-                        src={coin.img}
-                        alt={`Coin ${coin.name}`}
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div>
-                      <h1>I can do that</h1>
-                      <p>
-                        Now that we know who you are, I know who I am. I'm not a
-                        mistake! It all makes sense! In a comic, you know how
-                        you can tell who the arch-villain's going to be? He's
-                        the exact opposite of the hero. And most times they're
-                        friends, like you and me! I should've known way back
-                        when... You know why, David? Because of the kids. They
-                        called me Mr Glass.{" "}
-                      </p>
-                      <br />
-                      <h1>We happy?</h1>
-                      <p>
-                        Now that there is the Tec-9, a crappy spray gun from
-                        South Miami. This gun is advertised as the most popular
-                        gun in American crime. Do you believe that shit? It
-                        actually says that in the little book that comes with
-                        it: the most popular gun in American crime. Like they're
-                        actually proud of that shit.{" "}
-                      </p>
-                    </div>
-                  </div>
-                </Slide>
-              ))}
-            </Slider>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "15px",
+        <div
+          className={`gallery__panel ${panelVisible ? "visible" : "hidden"}`}
+          ref={panelRef} // Attach the ref to the panel
+        >
+          <div className="gallery__controls">
+            <button
+              onClick={() => {
+                toggleVisibility(false);
               }}
             >
-              <ButtonBack
+              <span>X</span>
+            </button>
+          </div>
+          <div className={`gallery__wrapper`}>
+            <CarouselProvider
+              className="carousel__container"
+              naturalSlideWidth={100}
+              naturalSlideHeight={100}
+              totalSlides={art.length}
+              currentSlide={randomStartIndex}
+              loop={true}
+            >
+              <Slider>
+                {art.map((art, index) => (
+                  <Slide index={index} key={art.name}>
+                    <div className="carousel__slider-box">
+                      <div
+                        className="carousel__image"
+                        onClick={() => openFullscreen(art.img)}
+                      >
+                        <Image
+                          src={art.img}
+                          alt={`Art ${art.name}`}
+                          style={{ width: "100%", height: "100%" }}
+                        />
+                      </div>
+                      <div className="carousel__text">
+                        <h1>{art.name}</h1>
+                        <p>
+                          {art.description
+                            ? art.description
+                            : "No description available."}
+                        </p>
+                      </div>
+                    </div>
+                  </Slide>
+                ))}
+              </Slider>
+              <div
                 style={{
-                  padding: "8px 12px",
-                  backgroundColor: "#007acc",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "15px",
                 }}
               >
-                Back
-              </ButtonBack>
-              <ButtonNext
-                style={{
-                  padding: "8px 12px",
-                  backgroundColor: "#007acc",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                }}
-              >
-                Next
-              </ButtonNext>
-            </div>
-          </CarouselProvider>
+                <ButtonBack
+                  style={{
+                    padding: "8px 12px",
+                    backgroundColor: "#007acc",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Back
+                </ButtonBack>
+                <ButtonNext
+                  style={{
+                    padding: "8px 12px",
+                    backgroundColor: "#007acc",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Next
+                </ButtonNext>
+              </div>
+            </CarouselProvider>
+          </div>
         </div>
       </div>
-    </div>
+      {fullscreenImage && (
+        <div className="fullscreen-overlay" onClick={closeFullscreen}>
+          <img
+            src={fullscreenImage}
+            alt="Fullscreen Art"
+            className="fullscreen-image"
+          />
+        </div>
+      )}
+    </>
   );
 };
 
