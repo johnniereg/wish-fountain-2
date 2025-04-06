@@ -39,6 +39,11 @@ const Carousel = ({ art }) => {
   // Close the panel if a click occurs outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Ignore clicks on the fullscreen overlay
+      if (fullscreenImage) {
+        return;
+      }
+
       if (panelRef.current && !panelRef.current.contains(event.target)) {
         setPanelVisible(false);
       }
@@ -53,7 +58,7 @@ const Carousel = ({ art }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [panelVisible]);
+  }, [panelVisible, fullscreenImage]); // Add fullscreenImage as a dependency
 
   return (
     <>
@@ -164,7 +169,13 @@ const Carousel = ({ art }) => {
         </div>
       </div>
       {fullscreenImage && (
-        <div className="fullscreen-overlay" onClick={closeFullscreen}>
+        <div
+          className="fullscreen-overlay"
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent the click event from propagating
+            closeFullscreen();
+          }}
+        >
           <img
             src={fullscreenImage}
             alt="Fullscreen Art"

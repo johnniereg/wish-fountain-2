@@ -44,6 +44,8 @@ import star7 from "../images/star-7.png";
 import star8 from "../images/star-8.png";
 import star9 from "../images/star-9.png";
 
+import art1 from "../images/placeholder.jpg";
+
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false);
   const [wishVisibility, setWishVisibility] = useState(false);
@@ -87,15 +89,11 @@ const App = () => {
   ];
 
   const art = [
-    { img: gem1, name: "Gem-1" },
-    { img: gem2, name: "Gem-2" },
-    { img: gem3, name: "Gem-3" },
-    { img: gem4, name: "Gem-4" },
-    { img: gem5, name: "Gem-5" },
-    { img: gem6, name: "Gem-6" },
-    { img: gem7, name: "Gem-7" },
-    { img: gem8, name: "Gem-8" },
-    { img: gem9, name: "Gem-9" }
+    { img: art1, name: "Art 1" },
+    { img: art1, name: "Art 2" },
+    { img: art1, name: "Art 3" },
+    { img: art1, name: "Art 4" },
+    { img: art1, name: "Art 5" },
   ]
   return (
     <div className="app">
