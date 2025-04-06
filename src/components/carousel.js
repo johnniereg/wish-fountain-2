@@ -19,8 +19,6 @@ const Carousel = ({ coins }) => {
   const [panelVisible, setPanelVisible] = useState(false);
   const [randomStartIndex, setRandomStartIndex] = useState(0);
 
-  console.log("randomStartIndex", randomStartIndex);
-
   const toggleVisibility = (val) => {
     if (val) {
       // When opening, generate a new random start slide
@@ -31,11 +29,11 @@ const Carousel = ({ coins }) => {
 
   return (
     <div
-      className={`carousel ${
-        panelVisible ? "carousel--open" : "carousel--close"
+      className={`gallery ${
+        panelVisible ? "gallery--open" : "gallery--close"
       }`}
     >
-      <div className={`carousel__icon ${panelVisible ? "hidden" : "visible"}`}>
+      <div className={`gallery__icon ${panelVisible ? "hidden" : "visible"}`}>
         <button
           onClick={() => {
             toggleVisibility(true);
@@ -55,8 +53,8 @@ const Carousel = ({ coins }) => {
           ></img>
         </button>
       </div>
-      <div className={`carousel__panel ${panelVisible ? "visible" : "hidden"}`}>
-        <div className="carousel__controls">
+      <div className={`gallery__panel ${panelVisible ? "visible" : "hidden"}`}>
+        <div className="gallery__controls">
           <button
             onClick={() => {
               toggleVisibility(false);
@@ -65,13 +63,14 @@ const Carousel = ({ coins }) => {
             <span>X</span>
           </button>
         </div>
-        <div className={`carousel__wrapper `}>
+        <div className={`gallery__wrapper `}>
           <CarouselProvider
-            className="carousel__continer"
+            className="carousel__container"
             naturalSlideWidth={100}
-            naturalSlideHeight={50}
+            naturalSlideHeight={100}
             totalSlides={coins.length}
             currentSlide={randomStartIndex}
+            loop={true}
           >
             <Slider>
               {coins.map((coin, index) => (

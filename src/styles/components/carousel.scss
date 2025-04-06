@@ -1,24 +1,36 @@
-.carousel {
+.gallery {
   bottom: 25px;
   position: absolute;
   left: 25px;
   z-index: 2;
 
   &--open {
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for element's own dimensions */
+    position: absolute;
+    z-index: 2;
+
+    background-image: url(../../images/pop-up.png); /* Add background image */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
     @media screen and (max-width: 769px) {
-      bottom: 75px;
-      left: unset;
+      // bottom: 75px;
+      // left: unset;
       width: 100%;
     }
   }
 
   &__panel {
-    background-image: url(../../images/pop-up.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     height: 286px;
     width: 400px;
 
@@ -45,29 +57,31 @@
   }
 
   &__wrapper {
+    width: 95%; /* Fill the width of the panel */
+    height: 95%; /* Fill the height of the panel */
     overflow-y: scroll;
-    margin: 15px 30px 0 35px;
-    padding-right: 10px;
-
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+  
     &::-webkit-scrollbar {
       width: 5px;
       height: 5px;
     }
-
+  
     &::-webkit-scrollbar-track {
       border-radius: 10px;
       background: rgba(0, 0, 0, 0.1);
     }
-
+  
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background: rgba(0, 0, 0, 0.2);
     }
-
+  
     &::-webkit-scrollbar-thumb:hover {
       background: rgba(0, 0, 0, 0.4);
     }
-
+  
     &::-webkit-scrollbar-thumb:active {
       background: rgba(0, 0, 0, 0.9);
     }
