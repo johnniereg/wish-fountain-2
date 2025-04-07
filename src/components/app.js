@@ -44,6 +44,8 @@ import star7 from "../images/star-7.png";
 import star8 from "../images/star-8.png";
 import star9 from "../images/star-9.png";
 
+import art1 from "../images/placeholder.jpg";
+
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false);
   const [wishVisibility, setWishVisibility] = useState(false);
@@ -86,6 +88,13 @@ const App = () => {
     { img: star9, name: "Star-9" },
   ];
 
+  const art = [
+    { img: art1, name: "Art 1" },
+    { img: art1, name: "Art 2" },
+    { img: art1, name: "Art 3" },
+    { img: art1, name: "Art 4" },
+    { img: art1, name: "Art 5" },
+  ]
   return (
     <div className="app">
       <div className="app__wrapper">
@@ -119,7 +128,7 @@ const App = () => {
       <Wishes isVisible={wishVisibility} toggleVisibility={setWishVisibility} />
       <Info />
       <Disclaimer />
-      <Carousel coins={coins} />
+      <Carousel art={art} />
     </div>
   );
 };
