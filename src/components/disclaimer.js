@@ -8,7 +8,8 @@ const Disclaimer = () => {
       <div className="disclaimer__wrapper">
         <p className="disclaimer__text">
           <em>
-          This is a project made in collaboration with Art City, all wishes must be child appropriate and free from hateful language of any kind.
+            Please do not use any racist, sexist, homophobic, ableist or
+            otherwise hateful language
           </em>
         </p>
       </div>

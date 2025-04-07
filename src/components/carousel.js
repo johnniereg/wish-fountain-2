@@ -6,7 +6,7 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
-  Image
+  Image,
 } from "pure-react-carousel";
 
 import "../styles/components/carousel.scss";
@@ -70,47 +70,12 @@ const Carousel = ({ coins }) => {
             className="carousel__container"
             naturalSlideWidth={100}
             naturalSlideHeight={50}
-            naturalSlideHeight={50}
             totalSlides={coins.length}
             currentSlide={0}
             infinite
           >
             <Slider>
               {coins.map((coin, index) => (
-                <Slide index={index} key={coin.name}>
-                  <div className="carousel__slider-box">
-                    <div>
-                      <h1 className="carousel__title">{coin.name}</h1>
-                    </div>
-                    <div className="carousel__image">
-                      <Image
-                        src={coin.img}
-                        alt={`Coin ${coin.name}`}
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div>
-                      <h1>I can do that</h1>
-                      <p>
-                        Now that we know who you are, I know who I am. I'm not a
-                        mistake! It all makes sense! In a comic, you know how
-                        you can tell who the arch-villain's going to be? He's
-                        the exact opposite of the hero. And most times they're
-                        friends, like you and me! I should've known way back
-                        when... You know why, David? Because of the kids. They
-                        called me Mr Glass.{" "}
-                      </p>
-                      <br />
-                      <h1>We happy?</h1>
-                      <p>
-                        Now that there is the Tec-9, a crappy spray gun from
-                        South Miami. This gun is advertised as the most popular
-                        gun in American crime. Do you believe that shit? It
-                        actually says that in the little book that comes with
-                        it: the most popular gun in American crime. Like they're
-                        actually proud of that shit.{" "}
-                      </p>
-                    </div>
                 <Slide index={index} key={coin.name}>
                   <div className="carousel__slider-box">
                     <div>

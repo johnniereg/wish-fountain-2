@@ -34,9 +34,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
       toggleWish(true)
     } else {
       if (filter.isProfane(textarea)) {
-        console.warn("Please, no profanity.") // not submitting the wish
-        hide()
-        toggleWish(true)
+        alert("Please, no profanity.")
         return
       } 
       fetch("/", {
