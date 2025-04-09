@@ -12,37 +12,35 @@ import Info from "../components/info";
 import Carousel from "../components/carousel";
 import Disclaimer from "../components/disclaimer";
 
-import gem1 from "../images/gem-1.png";
-import gem2 from "../images/gem-2.png";
-import gem3 from "../images/gem-3.png";
-import gem4 from "../images/gem-4.png";
-import gem5 from "../images/gem-5.png";
-import gem6 from "../images/gem-6.png";
-import gem7 from "../images/gem-7.png";
-import gem8 from "../images/gem-8.png";
-import gem9 from "../images/gem-9.png";
-import gem10 from "../images/gem-10.png";
-import gem11 from "../images/gem-11.png";
-import gem12 from "../images/gem-12.png";
-
-import gem13 from "../images/gem-13.png";
-import gem14 from "../images/gem-14.png";
-import gem15 from "../images/gem-15.png";
-import gem16 from "../images/gem-16.png";
-import gem17 from "../images/gem-17.png";
-import gem18 from "../images/gem-18.png";
-import gem19 from "../images/gem-19.png";
-
-import star1 from "../images/star-1.png";
-import star2 from "../images/star-2.png";
-import star3 from "../images/star-3.png";
-import star4 from "../images/star-4.png";
-import star5 from "../images/star-5.png";
-
-import star6 from "../images/star-6.png";
-import star7 from "../images/star-7.png";
-import star8 from "../images/star-8.png";
-import star9 from "../images/star-9.png";
+import coin1 from "../images/01.png";
+import coin2 from "../images/02.png";
+// import coin3 from "../images/03.png";
+import coin4 from "../images/04.png";
+import coin5 from "../images/05.png";
+import coin6 from "../images/06.png";
+import coin7 from "../images/07.png";
+import coin8 from "../images/08.png";
+import coin9 from "../images/09.png";
+import coin10 from "../images/10.png";
+import coin11 from "../images/11.png";
+import coin12 from "../images/12.png";
+import coin13 from "../images/13.png";
+// import coin14 from "../images/14.png";
+// import coin15 from "../images/15.png";
+import coin16 from "../images/16.png";
+import coin17 from "../images/17.png";
+import coin18 from "../images/18.png";
+import coin19 from "../images/19.png";
+// import coin20 from "../images/20.png";
+import coin21 from "../images/21.png";
+import coin22 from "../images/22.png";
+// import coin23 from "../images/23.png";
+import coin24 from "../images/24.png";
+import coin25 from "../images/25.png";
+// import coin26 from "../images/26.png";
+// import coin27 from "../images/27.png";
+// import coin28 from "../images/28.png";
+import coin29 from "../images/29.png";
 
 import art1 from "../images/placeholder.jpg";
 
@@ -52,40 +50,35 @@ const App = () => {
   const [isDragging, setIsDragging] = useState(false);
 
   const coins = [
-    { img: gem1, name: "Gem-1" },
-    { img: gem2, name: "Gem-2" },
-    { img: gem3, name: "Gem-3" },
-    { img: gem4, name: "Gem-4" },
-    { img: gem5, name: "Gem-5" },
-    { img: gem6, name: "Gem-6" },
-    { img: gem7, name: "Gem-7" },
-    { img: gem8, name: "Gem-8" },
-    { img: gem9, name: "Gem-9" },
-    { img: gem10, name: "Gem-10" },
-    { img: gem11, name: "Gem-11" },
-    { img: gem12, name: "Gem-12" },
-    { img: gem13, name: "Gem-13" },
-    { img: gem14, name: "Gem-14" },
-    { img: gem15, name: "Gem-15" },
-    { img: gem16, name: "Gem-16" },
-    { img: gem17, name: "Gem-17" },
-    { img: gem18, name: "Gem-18" },
-    { img: gem19, name: "Gem-19" },
-    { img: gem5, name: "Gem-20" },
-    { img: gem6, name: "Gem-21" },
-    { img: gem14, name: "Gem-22" },
-    { img: gem14, name: "Gem-23" },
-    { img: gem6, name: "Gem-24" },
-    { img: gem14, name: "Gem-25" },
-    { img: star1, name: "Star-1" },
-    { img: star2, name: "Star-2" },
-    { img: star3, name: "Star-3" },
-    { img: star4, name: "Star-4" },
-    { img: star5, name: "Star-5" },
-    { img: star6, name: "Star-6" },
-    { img: star7, name: "Star-7" },
-    { img: star8, name: "Star-8" },
-    { img: star9, name: "Star-9" },
+    { img: coin1, name: "Gem-1" },
+    { img: coin2, name: "Gem-2" },
+    // { img: coin3, name: "Gem-3" },
+    { img: coin4, name: "Gem-4" },
+    { img: coin5, name: "Gem-5" },
+    { img: coin6, name: "Gem-6" },
+    { img: coin7, name: "Gem-7" },
+    { img: coin8, name: "Gem-8" },
+    { img: coin9, name: "Gem-9" },
+    { img: coin10, name: "Gem-10" },
+    { img: coin11, name: "Gem-11" },
+    { img: coin12, name: "Gem-12" },
+    { img: coin13, name: "Gem-13" },
+    // { img: coin14, name: "Gem-14" },
+    // { img: coin15, name: "Gem-15" },
+    { img: coin16, name: "Gem-16" },
+    { img: coin17, name: "Gem-17" },
+    { img: coin18, name: "Gem-18" },
+    { img: coin19, name: "Gem-19" },
+    // { img: coin20, name: "Gem-20" },
+    { img: coin21, name: "Gem-21" },
+    { img: coin22, name: "Gem-22" },
+    // { img: coin23, name: "Gem-23" },
+    { img: coin24, name: "Gem-24" },
+    { img: coin25, name: "Gem-25" },
+    // { img: coin26, name: "Star-1" },
+    // { img: coin27, name: "Star-2" },
+    // { img: coin28, name: "Star-3" },
+    { img: coin29, name: "Star-4" },
   ];
 
   const art = [
