@@ -135,7 +135,7 @@ const App = () => {
       <Wishes isVisible={wishVisibility} toggleVisibility={setWishVisibility} />
       <Info />
       <Disclaimer />
-      <Carousel art={art} />
+      {/* <Carousel art={art} /> */}
     </div>
   );
 };
