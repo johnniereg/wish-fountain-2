@@ -3,6 +3,8 @@
   justify-content: center;
   margin-top: 50px;
 
+
+
   .image__wrapper {
     height: 100%;
     margin: 0 5%;
@@ -18,5 +20,25 @@
 
   h1 {
     text-align: center;
+  }
+
+  .hero__image--desktop {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 769px) {
+      display: none;
+    }
+  }
+
+  .hero__image--mobile {
+    display: none;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 769px) {
+      display: block;
+    }
   }
 }

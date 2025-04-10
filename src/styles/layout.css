@@ -47,6 +47,10 @@ body {
   margin: 0;
   word-wrap: break-word;
   width: 100vw;
+
+  @media screen and (max-width: 769px) {
+    background-image: url(../images/mobilebackground.png);
+  }
 }
 a {
   background-color: transparent;
