@@ -513,4 +513,21 @@
       display: none !important;
     }
   }
+
+  &.Star-10 {
+    left: 20%;
+    top: -45%;
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+    }
+  }
+  &.Star-11 {
+    left: 25%;
+    top: -35%;
+
+    @media screen and (max-width: 769px) {
+      display: none !important;
+    }
+  }
 }

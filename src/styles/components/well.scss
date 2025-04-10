@@ -20,6 +20,8 @@
   img {
     max-height: 100%;
     max-width: 100%;
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
 
     @media screen and (max-width: 769px) {
       width: auto;
