@@ -3,7 +3,7 @@ import { DropTarget } from "react-drag-drop-container"
 
 import "../styles/components/well.scss"
 
-import Fountain from "../images/fountain.gif"
+import Fountain from "../images/pinkfountain.png"
 
 const Well = ({ name, isDragging }) => {
   return (

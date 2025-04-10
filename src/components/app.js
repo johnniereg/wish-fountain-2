@@ -61,7 +61,7 @@ const App = () => {
     { img: coin2, name: "Gem-2" },
     { img: coin3, name: "Gem-3" },
     { img: coin4, name: "Gem-4" },
-    { img: coin5, name: "Gem-5" },
+    { img: coin5, name: "Gem-5" }, 
     { img: coin6, name: "Gem-6" },
     { img: coin7, name: "Gem-7" },
     { img: coin8, name: "Gem-8" },
