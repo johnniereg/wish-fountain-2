@@ -71,19 +71,28 @@
 
   &__controls {
     position: absolute;
-    top: -30px;
-    //right: 30px;
+    top: 10%;
+    right: 15%;
     // padding: 10px;
     z-index: 3;
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
+
+    @media screen {
+      
+    }
+
+    @media screen and (max-width: 769px) {
+      top: 25%;
+      right: 5%;
+    }
 
     img {
       height: 30px;
     }
   }
 
-
+ 
   &__wrapper {
     width: 83%;
     /* Fill the width of the panel */
@@ -115,19 +124,6 @@
     &::-webkit-scrollbar-thumb:active {
       background: rgba(0, 0, 0, 0.9);
     }
-
-    // @media screen and (max-width: 769px) {
-    //   width: unset;
-    //   /* Fill the width of the panel */
-    //   height: unset;
-    //   /* Fill the height of the panel */
-    //   overflow-y: scroll;
-    //   margin: unset;
-    //   /* Remove any margins */
-    //   padding: unset;
-    //   /* Remove any padding */
-    // }
-
   }
 
   &__image {
@@ -208,6 +204,9 @@
   /* Ensure the image doesn't overflow */
   object-fit: contain;
   /* Scale the image while maintaining aspect ratio */
+  -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+  cursor: zoom-in;
 }
 
 .carousel__text {
@@ -276,4 +275,5 @@
   max-height: 90%;
   object-fit: contain;
   /* Ensure the image scales proportionally */
+  cursor: zoom-out
 }
