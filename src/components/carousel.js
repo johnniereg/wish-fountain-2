@@ -6,13 +6,16 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
-  Image
+  Image,
 } from "pure-react-carousel";
 
 import "../styles/components/carousel.scss";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 import icon from "../images/semi-colon.png";
+import left from "../images/to-left.png";
+import right from "../images/to-right.png";
+import close from "../images/close.png";
 
 const Carousel = ({ art }) => {
   const [panelVisible, setPanelVisible] = useState(false);
@@ -63,7 +66,9 @@ const Carousel = ({ art }) => {
   return (
     <>
       <div
-        className={`gallery ${panelVisible ? "gallery--open" : "gallery--close"}`}
+        className={`gallery ${
+          panelVisible ? "gallery--open" : "gallery--close"
+        }`}
       >
         <div className={`gallery__icon ${panelVisible ? "hidden" : "visible"}`}>
           <button
@@ -94,17 +99,25 @@ const Carousel = ({ art }) => {
                 toggleVisibility(false);
               }}
             >
-              <span>X</span>
+              <span>
+                <div>
+                  <img
+                    src={close}
+                    alt={`Art ${art.name}`}
+                    //style={{ width: "100%", height: "100%" }}
+                  />
+                </div>
+              </span>
             </button>
           </div>
           <div className={`gallery__wrapper`}>
             <CarouselProvider
-              className="carousel__container"
               naturalSlideWidth={100}
               naturalSlideHeight={100}
               totalSlides={art.length}
               currentSlide={randomStartIndex}
               loop={true}
+              infinite={true}
             >
               <Slider>
                 {art.map((art, index) => (
@@ -132,36 +145,21 @@ const Carousel = ({ art }) => {
                   </Slide>
                 ))}
               </Slider>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "15px",
-                }}
-              >
-                <ButtonBack
-                  style={{
-                    padding: "8px 12px",
-                    backgroundColor: "#007acc",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "4px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Back
+              <div className="carousel__arrow_container">
+                <ButtonBack className="carousel__arrow_btn">
+                  <Image
+                    className="carousel__arrow_img"
+                    src={left}
+                    alt={`left Arrow`}
+                  ></Image>
                 </ButtonBack>
-                <ButtonNext
-                  style={{
-                    padding: "8px 12px",
-                    backgroundColor: "#007acc",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "4px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Next
+
+                <ButtonNext className="carousel__arrow_btn">
+                  <Image
+                    className="carousel__arrow_img"
+                    src={right}
+                    alt={`right Arrow`}
+                  ></Image>
                 </ButtonNext>
               </div>
             </CarouselProvider>

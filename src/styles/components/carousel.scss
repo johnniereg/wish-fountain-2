@@ -11,35 +11,52 @@
     /* Center horizontally */
     transform: translate(-50%, -50%);
     /* Adjust for element's own dimensions */
-    position: absolute;
+    position: fixed;
     z-index: 2;
 
-    width: 50vw; /* 50% of the viewport width */
-    height: auto; /* Let the height adjust dynamically */
-    max-height: 90vh; /* Ensure it doesn't exceed 90% of the viewport height */
-    background-image: url(../../images/pop-up.png); /* Add background image */
-    background-size: contain; /* Scale the image to cover the element */
-    background-position: center; /* Center the image */
+    width: 50vw;
+    /* 50% of the viewport width */
+    height: auto;
+    /* Let the height adjust dynamically */
+    max-height: 90vh;
+    /* Ensure it doesn't exceed 90% of the viewport height */
+    background-image: url(../../images/pop-up.png);
+    /* Add background image */
+    background-size: contain;
+    /* Scale the image to cover the element */
+    background-position: center;
+    /* Center the image */
     background-repeat: no-repeat;
 
     @media screen and (max-width: 769px) {
-      width: 90vw; /* Use 90% of the viewport width on smaller screens */
-      max-height: 80vh; /* Adjust max height for smaller screens */
+      width: 90vw;
+      /* Use 90% of the viewport width on smaller screens */
+      max-height: 80vh;
+      /* Adjust max height for smaller screens */
     }
   }
 
   &__panel {
     aspect-ratio: 1 / 1;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    height: 100%; /* Ensure it fills the parent container */
-    width: 100%; /* Ensure it fills the parent container */
+    display: flex;
+    /* Enable flexbox */
+    flex-direction: column;
+    /* Stack content vertically */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    height: 100%;
+    /* Ensure it fills the parent container */
+    width: 100%;
+    /* Ensure it fills the parent container */
 
     @media screen and (max-width: 769px) {
-      width: unset;
+      //width: unset;
+      margin-top: 7vh;
+      height: 32.5vh;
     }
+
 
     &:before,
     &:after {
@@ -54,46 +71,72 @@
 
   &__controls {
     position: absolute;
-    top: 30px;
-    right: 30px;
-    padding: 10px;
+    top: -30px;
+    //right: 30px;
+    // padding: 10px;
     z-index: 3;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+
+    img {
+      height: 30px;
+    }
   }
 
+
   &__wrapper {
-    width: 95%; /* Fill the width of the panel */
-    height: 95%; /* Fill the height of the panel */
+    width: 83%;
+    /* Fill the width of the panel */
+    height: 95%;
+    /* Fill the height of the panel */
     overflow-y: scroll;
-    margin: 0; /* Remove any margins */
-    padding: 0; /* Remove any padding */
-  
+    margin: 0;
+    /* Remove any margins */
+    padding: 0;
+    /* Remove any padding */
+
     &::-webkit-scrollbar {
       width: 5px;
-      height: 5px;
     }
-  
+
     &::-webkit-scrollbar-track {
-      border-radius: 10px;
       background: rgba(0, 0, 0, 0.1);
     }
-  
+
     &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
     }
-  
+
     &::-webkit-scrollbar-thumb:hover {
       background: rgba(0, 0, 0, 0.4);
     }
-  
+
     &::-webkit-scrollbar-thumb:active {
       background: rgba(0, 0, 0, 0.9);
     }
+
+    // @media screen and (max-width: 769px) {
+    //   width: unset;
+    //   /* Fill the width of the panel */
+    //   height: unset;
+    //   /* Fill the height of the panel */
+    //   overflow-y: scroll;
+    //   margin: unset;
+    //   /* Remove any margins */
+    //   padding: unset;
+    //   /* Remove any padding */
+    // }
+
   }
 
-  &__container {
-    width: 100%;
+  &__image {
+    width: 50%; // Make the image fit the width of the container
+    max-width: 300px; // Optional: Limit the maximum width
+    height: auto; // Maintain aspect ratio
+    margin-bottom: 10px; // Add spacing below the image
   }
+
 
   &__icon {
     &.hidden {
@@ -111,8 +154,6 @@
   }
 
   .icon {
-    height: 100%;
-
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
   }
@@ -132,35 +173,87 @@
 
 .carousel__slider-box {
   display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  justify-content: space-between; /* Add space between image and text */
-  align-items: center; /* Center content horizontally */
-  height: 100%; /* Fill the available height */
-  width: 100%; /* Fill the available width */
-  padding: 10px; /* Add some padding for spacing */
-  box-sizing: border-box; /* Include padding in width/height calculations */
+  flex-direction: column;
+  /* Stack image and text vertically */
+  justify-content: space-around;
+  /* Add space between image and text */
+  align-items: center;
+  /* Center content horizontally */
+  height: 100%;
+  /* Fill the available height */
+  width: 100%;
+  /* Fill the available width */
+  padding: 10px;
+  /* Add some padding for spacing */
+  box-sizing: border-box;
+  /* Include padding in width/height calculations */
 }
 
 .carousel__image {
-  flex: 1; /* Allow the image to take up available space */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Ensure the image container fills the width */
-  height: auto; /* Maintain aspect ratio */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 60%;
+  /* Ensure the image container fills the width */
+  height: auto;
+  /* Maintain aspect ratio */
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
 }
 
 .carousel__image img {
-  max-width: 100%; /* Scale the image to fit the container */
-  max-height: 100%; /* Ensure the image doesn't overflow */
-  object-fit: contain; /* Scale the image while maintaining aspect ratio */
+  max-width: 100%;
+  /* Scale the image to fit the container */
+  max-height: 100%;
+  /* Ensure the image doesn't overflow */
+  object-fit: contain;
+  /* Scale the image while maintaining aspect ratio */
 }
 
 .carousel__text {
-  margin-top: 10px; /* Add spacing above the text */
-  text-align: center; /* Center-align the text */
+  margin-top: 10px;
+  /* Add spacing above the text */
+  text-align: center;
+  /* Center-align the text */
 }
+
+.carousel__arrow_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 9.5%;
+  right: 0;
+  width: 80%;
+  height: 0;
+}
+
+.carousel__arrow_btn {
+  height: 60px;
+  width: 50px;
+}
+
+.carousel__arrow_img {
+  -webkit-filter: drop-shadow(2px 2px 2px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+}
+
+@media screen and (max-width: 769px) {
+
+  .carousel__arrow_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 2.5%;
+    right: 0;
+    width: 95%;
+    height: 0;
+  }
+}
+
 
 .fullscreen-overlay {
   position: fixed;
@@ -168,16 +261,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.75);
+  /* Dark overlay */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure it appears above other elements */
+  z-index: 9999;
+  /* Ensure it appears above other elements */
   cursor: pointer;
 }
 
 .fullscreen-image {
   max-width: 90%;
   max-height: 90%;
-  object-fit: contain; /* Ensure the image scales proportionally */
+  object-fit: contain;
+  /* Ensure the image scales proportionally */
 }
