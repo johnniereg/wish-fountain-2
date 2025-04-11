@@ -89,7 +89,7 @@
     /* Fill the width of the panel */
     height: 95%;
     /* Fill the height of the panel */
-    overflow-y: scroll;
+    // overflow-y: scroll;
     margin: 0;
     /* Remove any margins */
     padding: 0;
@@ -171,6 +171,14 @@
   }
 }
 
+.carousel {
+  height: 100%;
+}
+
+.carousel__slider {
+  height: 100%;
+}
+
 .carousel__slider-box {
   display: flex;
   flex-direction: column;
@@ -179,7 +187,7 @@
   /* Add space between image and text */
   align-items: center;
   /* Center content horizontally */
-  height: 100%;
+  // height: 100%;
   /* Fill the available height */
   width: 100%;
   /* Fill the available width */
@@ -187,6 +195,8 @@
   /* Add some padding for spacing */
   box-sizing: border-box;
   /* Include padding in width/height calculations */
+  overflow: hidden;
+  margin-top: 10%;
 }
 
 .carousel__image {
