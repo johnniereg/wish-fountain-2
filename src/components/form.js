@@ -50,6 +50,8 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
         .then(() => {
           hide();
           toggleWish(true);
+          setState({}); // Reset the state
+          form.reset(); // Clear the form inputs
         })
         .catch((error) => alert(error));
     }
