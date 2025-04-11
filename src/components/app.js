@@ -49,7 +49,20 @@ import coin34 from "../images/coin34.png";
 import coin35 from "../images/coin35.png";
 import coin36 from "../images/coin36.png";
 
-import art1 from "../images/placeholder.jpg";
+import art1 from "../images/01wishgranted.png"
+import art2 from "../images/02wishgranted.png"
+import art3 from "../images/03wishgranted.png"
+import art4 from "../images/04wishgranted.png"
+import art5 from "../images/05wishgranted.png"
+import art6 from "../images/06wishgranted.png"
+import art7 from "../images/07wishgranted.png"
+import art8 from "../images/08wishgranted.png"
+import art9 from "../images/09wishgranted.png"
+import art10 from "../images/10wishgranted.png"
+import art11 from "../images/11wishgranted.png"
+import art12 from "../images/12wishgranted.png"
+import art13 from "../images/13wishgranted.png"
+import art14 from "../images/14wishgranted.png"
 
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false);
@@ -96,12 +109,22 @@ const App = () => {
   ];
 
   const art = [
-    { img: art1, name: "Art 1" },
-    { img: art1, name: "Art 2" },
-    { img: art1, name: "Art 3" },
-    { img: art1, name: "Art 4" },
-    { img: art1, name: "Art 5" },
-  ]
+    { img: art1, name: "Wish Granted 1" },
+    { img: art2, name: "Wish Granted 2" },
+    { img: art3, name: "Wish Granted 3" },
+    { img: art4, name: "Wish Granted 4" },
+    { img: art5, name: "Wish Granted 5" },
+    { img: art6, name: "Wish Granted 6" },
+    { img: art7, name: "Wish Granted 7" },
+    { img: art8, name: "Wish Granted 8" },
+    { img: art9, name: "Wish Granted 9" },
+    { img: art10, name: "Wish Granted 10" },
+    { img: art11, name: "Wish Granted 11" },
+    { img: art12, name: "Wish Granted 12" },
+    { img: art13, name: "Wish Granted 13" },
+    { img: art14, name: "Wish Granted 14" }
+  ];
+
   return (
     <div className="app">
       <div className="app__wrapper">
