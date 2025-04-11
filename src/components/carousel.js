@@ -12,12 +12,13 @@ import {
 import "../styles/components/carousel.scss";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-import icon from "../images/semi-colon.png";
+import icon from "../images/wishgallery.png";
 import left from "../images/to-left.png";
 import right from "../images/to-right.png";
 import close from "../images/close.png";
 
 const Carousel = ({ art }) => {
+
   const [panelVisible, setPanelVisible] = useState(false);
   const [randomStartIndex, setRandomStartIndex] = useState(0);
   const panelRef = useRef(null); // Reference to the panel element
@@ -129,17 +130,10 @@ const Carousel = ({ art }) => {
                       >
                         <Image
                           src={art.img}
+                          loading="lazy"
                           alt={`Art ${art.name}`}
                           style={{ width: "100%", height: "100%" }}
                         />
-                      </div>
-                      <div className="carousel__text">
-                        <h1>{art.name}</h1>
-                        <p>
-                          {art.description
-                            ? art.description
-                            : "No description available."}
-                        </p>
                       </div>
                     </div>
                   </Slide>
