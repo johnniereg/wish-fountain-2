@@ -18,7 +18,7 @@
     /* 50% of the viewport width */
     height: auto;
     /* Let the height adjust dynamically */
-    max-height: 90vh;
+    max-height: 80vh;
     /* Ensure it doesn't exceed 90% of the viewport height */
     background-image: url(../../images/pop-up.png);
     /* Add background image */
@@ -87,7 +87,7 @@
   &__wrapper {
     width: 83%;
     /* Fill the width of the panel */
-    height: 95%;
+    //height: 95%;
     /* Fill the height of the panel */
     // overflow-y: scroll;
     margin: 0;
