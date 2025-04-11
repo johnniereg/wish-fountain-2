@@ -1,44 +1,44 @@
-import React, { useState } from "react"
-import { Filter } from "bad-words"
+import React, { useState, useEffect, useRef } from "react";
+import { Filter } from "bad-words";
 
-import "../styles/components/form.scss"
+import "../styles/components/form.scss";
 
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
-  const [state, setState] = useState({})
-  const filter = new Filter()
+  const [state, setState] = useState({});
+  const filter = new Filter();
+  const formRef = useRef(null); // Reference to the form element
 
-  const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
 
   const hide = () => {
-    toggleForm(false)
-  }
+    toggleForm(false);
+  };
 
-  const encode = data => {
+  const encode = (data) => {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    const formData = new FormData(form)
-    const textarea = formData.get("textarea")
-
+    const formData = new FormData(form);
+    const textarea = formData.get("textarea");
 
     if (!state.textarea) {
-      hide()
-      toggleWish(true)
+      hide();
+      toggleWish(true);
     } else {
       if (filter.isProfane(textarea)) {
-        console.warn("Please, no profanity.") // not submitting the wish
-        hide()
-        toggleWish(true)
-        return
-      } 
+        console.warn("Please, no profanity."); // not submitting the wish
+        hide();
+        toggleWish(true);
+        return;
+      }
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -48,18 +48,45 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
         }),
       })
         .then(() => {
-          hide()
-          toggleWish(true)
+          hide();
+          toggleWish(true);
+          setState({}); // Reset the state
+          form.reset(); // Clear the form inputs
         })
-        .catch(error => alert(error))
+        .catch((error) => alert(error));
     }
-  }
+  };
 
-  const classes = isVisible ? "form visible" : "form hidden"
+  // Add event listeners for clicks outside the form and the Esc key
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        hide();
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        hide();
+      }
+    };
+
+    if (isVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isVisible]);
+
+  const classes = isVisible ? "form visible" : "form hidden";
 
   return (
     <div className={classes}>
-      <div className="form__wrapper">
+      <div className="form__wrapper" ref={formRef}>
         <form
           className="wish-form"
           name="art-city-wish"
@@ -77,7 +104,7 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

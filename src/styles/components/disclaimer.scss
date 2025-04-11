@@ -15,9 +15,11 @@
 }
 
 .disclaimer__text {
-  color: #db6825;
+  color: #ffffff;
   font-weight: bold;
   margin: 0 0 20px;
+  -webkit-filter: drop-shadow(1px 1px 1px #222);
+  filter: drop-shadow(1px 1px 1px #222);
 
   /* animation properties */
   -moz-transform: translateX(100%);
