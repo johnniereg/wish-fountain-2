@@ -133,7 +133,6 @@ const App = () => {
         isVisible={formVisibility}
       />
       <Wishes isVisible={wishVisibility} toggleVisibility={setWishVisibility} />
-      <Carousel art={art}/>
       <Info />
       <Disclaimer />
       {/* <Carousel art={art} /> */}
