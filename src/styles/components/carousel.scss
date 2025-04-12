@@ -18,7 +18,7 @@
     /* 50% of the viewport width */
     height: auto;
     /* Let the height adjust dynamically */
-    max-height: 80vh;
+    max-height: 80dvh;
     /* Ensure it doesn't exceed 90% of the viewport height */
     background-image: url(../../images/pop-up.png);
     /* Add background image */
@@ -31,7 +31,7 @@
     @media screen and (max-width: 769px) {
       width: 90vw;
       /* Use 90% of the viewport width on smaller screens */
-      max-height: 80vh;
+      max-height: 80dvh;
       /* Adjust max height for smaller screens */
     }
   }
@@ -53,8 +53,8 @@
 
     @media screen and (max-width: 769px) {
       //width: unset;
-      margin-top: 7vh;
-      height: 32.5vh;
+      margin-top: 7dvh;
+      height: 32.5dvh;
     }
 
 
@@ -259,7 +259,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgba(0, 0, 0, 0.75);
   /* Dark overlay */
   display: flex;
