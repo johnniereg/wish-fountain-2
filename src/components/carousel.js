@@ -130,7 +130,7 @@ const Carousel = ({ art }) => {
                       >
                         <Image
                           src={art.img}
-                          loading="lazy"
+                          loading={index === randomStartIndex ? "eager" : "lazy"}
                           alt={`Art ${art.name}`}
                           style={{ width: "100%", height: "100%" }}
                         />
