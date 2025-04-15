@@ -63,6 +63,35 @@ import art11 from "../images/11wishgranted.png"
 import art12 from "../images/12wishgranted.png"
 import art13 from "../images/13wishgranted.png"
 import art14 from "../images/14wishgranted.png"
+import art15 from "../images/15wishgranted.png"
+import art16 from "../images/16wishgranted.png"
+import art17 from "../images/17wishgranted.png"
+import art18 from "../images/18wishgranted.png"
+import art19 from "../images/19wishgranted.png"
+import art20 from "../images/20wishgranted.png"
+import art21 from "../images/21wishgranted.png"
+import art22 from "../images/22wishgranted.png"
+import art23 from "../images/23wishgranted.png"
+import art24 from "../images/24wishgranted.png"
+import art25 from "../images/25wishgranted.png"
+import art26 from "../images/26wishgranted.png"
+import art27 from "../images/27wishgranted.png"
+import art28 from "../images/28wishgranted.png"
+import art29 from "../images/29wishgranted.png"
+import art30 from "../images/30wishgranted.png"
+import art31 from "../images/31wishgranted.png"
+import art32 from "../images/32wishgranted.png"
+import art33 from "../images/33wishgranted.png"
+import art34 from "../images/34wishgranted.png"
+import art35 from "../images/35wishgranted.png"
+import art36 from "../images/36wishgranted.png"
+import art37 from "../images/37wishgranted.png"
+import art38 from "../images/38wishgranted.png"
+import art39 from "../images/39wishgranted.png"
+import art40 from "../images/40wishgranted.png"
+import art41 from "../images/41wishgranted.png"
+import art42 from "../images/42wishgranted.png"
+import art43 from "../images/43wishgranted.png"
 
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false);
@@ -122,7 +151,36 @@ const App = () => {
     { img: art11, name: "Wish Granted 11" },
     { img: art12, name: "Wish Granted 12" },
     { img: art13, name: "Wish Granted 13" },
-    { img: art14, name: "Wish Granted 14" }
+    { img: art14, name: "Wish Granted 14" },
+    { img: art15, name: "Wish Granted 15" },
+    { img: art16, name: "Wish Granted 16" },
+    { img: art17, name: "Wish Granted 17" },
+    { img: art18, name: "Wish Granted 18" },
+    { img: art19, name: "Wish Granted 19" },
+    { img: art20, name: "Wish Granted 20" },
+    { img: art21, name: "Wish Granted 21" },
+    { img: art22, name: "Wish Granted 22" },
+    { img: art23, name: "Wish Granted 23" },
+    { img: art24, name: "Wish Granted 24" },
+    { img: art25, name: "Wish Granted 25" },
+    { img: art26, name: "Wish Granted 26" },
+    { img: art27, name: "Wish Granted 27" },
+    { img: art28, name: "Wish Granted 28" },
+    { img: art29, name: "Wish Granted 29" },
+    { img: art30, name: "Wish Granted 30" },
+    { img: art31, name: "Wish Granted 31" },
+    { img: art32, name: "Wish Granted 32" },
+    { img: art33, name: "Wish Granted 33" },
+    { img: art34, name: "Wish Granted 34" },
+    { img: art35, name: "Wish Granted 35" },
+    { img: art36, name: "Wish Granted 36" },
+    { img: art37, name: "Wish Granted 37" },
+    { img: art38, name: "Wish Granted 38" },
+    { img: art39, name: "Wish Granted 39" },
+    { img: art40, name: "Wish Granted 40" },
+    { img: art41, name: "Wish Granted 41" },
+    { img: art42, name: "Wish Granted 42" },
+    { img: art43, name: "Wish Granted 43" }
   ];
 
   return (
