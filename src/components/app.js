@@ -92,6 +92,19 @@ import art40 from "../images/40wishgranted.png"
 import art41 from "../images/41wishgranted.png"
 import art42 from "../images/42wishgranted.png"
 import art43 from "../images/43wishgranted.png"
+import art44 from "../images/44wishgranted.png"
+import art45 from "../images/45wishgranted.png"
+import art46 from "../images/46wishgranted.png"
+import art47 from "../images/47wishgranted.png"
+import art48 from "../images/48wishgranted.png"
+import art49 from "../images/49wishgranted.png"
+import art50 from "../images/50wishgranted.png"
+import art51 from "../images/51wishgranted.png"
+import art52 from "../images/52wishgranted.png"
+import art53 from "../images/53wishgranted.png"
+import art54 from "../images/54wishgranted.png"
+import art55 from "../images/55wishgranted.png"
+import art56 from "../images/56wishgranted.png"
 
 const App = () => {
   const [formVisibility, setFormVisibility] = useState(false);
@@ -180,7 +193,21 @@ const App = () => {
     { img: art40, name: "Wish Granted 40" },
     { img: art41, name: "Wish Granted 41" },
     { img: art42, name: "Wish Granted 42" },
-    { img: art43, name: "Wish Granted 43" }
+    { img: art43, name: "Wish Granted 43" },
+    { img: art44, name: "Wish Granted 44" },
+    { img: art45, name: "Wish Granted 45" },
+    { img: art46, name: "Wish Granted 46" },
+    { img: art47, name: "Wish Granted 47" },
+    { img: art48, name: "Wish Granted 48" },
+    { img: art49, name: "Wish Granted 49" },
+    { img: art50, name: "Wish Granted 50" },
+    { img: art51, name: "Wish Granted 51" },
+    { img: art52, name: "Wish Granted 52" },
+    { img: art53, name: "Wish Granted 53" },
+    { img: art54, name: "Wish Granted 54" },
+    { img: art55, name: "Wish Granted 55" },
+    { img: art56, name: "Wish Granted 56" }
+  // Add more art images as needed
   ];
 
   return (
