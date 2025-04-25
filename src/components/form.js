@@ -5,8 +5,9 @@ import "../styles/components/form.scss";
 
 const Form = ({ isVisible, toggleForm, toggleWish }) => {
   const [state, setState] = useState({});
+  const [submitting, setSubmitting] = useState(false); // Track submission state
   const filter = new Filter();
-  const formRef = useRef(null); // Reference to the form element
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -24,6 +25,9 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (submitting) return; // Prevent multiple submissions
+
+    setSubmitting(true); // Disable the button
     const form = e.target;
 
     const formData = new FormData(form);
@@ -32,11 +36,13 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
     if (!state.textarea) {
       hide();
       toggleWish(true);
+      setSubmitting(false); // Re-enable the button
     } else {
       if (filter.isProfane(textarea)) {
-        console.warn("Please, no profanity."); // not submitting the wish
+        console.warn("Please, no profanity."); // Not submitting the wish
         hide();
         toggleWish(true);
+        setSubmitting(false); // Re-enable the button
         return;
       }
       fetch("/", {
@@ -53,11 +59,13 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
           setState({}); // Reset the state
           form.reset(); // Clear the form inputs
         })
-        .catch((error) => alert(error));
+        .catch((error) => alert(error))
+        .finally(() => {
+          setSubmitting(false); // Re-enable the button
+        });
     }
   };
 
-  // Add event listeners for clicks outside the form and the Esc key
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (formRef.current && !formRef.current.contains(event.target)) {
@@ -98,8 +106,8 @@ const Form = ({ isVisible, toggleForm, toggleWish }) => {
           <input type="hidden" name="wish-form" value="wish" />
           <label htmlFor="text">Toss your wish into the fountain</label>
           <textarea name="textarea" onChange={handleChange} />
-          <button className="submit" type="submit">
-            Submit
+          <button className="submit" type="submit" disabled={submitting}>
+            {submitting ? "" : "Submit"}
           </button>
         </form>
       </div>
